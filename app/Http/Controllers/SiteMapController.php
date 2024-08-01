@@ -116,7 +116,7 @@ class SiteMapController extends Controller
         // List of active languages for API
         $Language = Language::where("status", true)->where("code", $lang)->first();
         if ($lang == "" || empty($Language)) {
-            $lang = config('smartend.default_language');
+            $lang = config('spreinvents.default_language');
         }
         return $lang;
     }

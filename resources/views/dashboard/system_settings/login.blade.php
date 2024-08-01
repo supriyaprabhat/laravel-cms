@@ -11,7 +11,7 @@
             <div class="pull-right text-muted" dir="ltr">
                 {{ config('app.url') }}/
             </div>
-            {!! Form::text('backend_path',config('smartend.backend_path'), array('placeholder' => config('app.url').'/admin','class' => 'form-control backend_path', 'dir'=>'ltr')) !!}
+            {!! Form::text('backend_path',config('spreinvents.backend_path'), array('placeholder' => config('app.url').'/admin','class' => 'form-control backend_path', 'dir'=>'ltr')) !!}
         </div>
         <div class="form-group">
             <label>{{ __('backend.permissionForNewUsers') }} : </label>

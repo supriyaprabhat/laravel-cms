@@ -8,7 +8,7 @@
     <div class="row topic-custom-fields">
         <?php
         $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-        $cf_title_var2 = "title_" . config('smartend.default_language');
+        $cf_title_var2 = "title_" . config('spreinvents.default_language');
         ?>
         @foreach($Fields as $customField)
             <?php
@@ -138,7 +138,7 @@
                         <div class="custom-field-value card mb-3 py-2 px-3 rounded-2">
                             <?php
                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                             if ($customField->$cf_details_var != "") {
                                 $cf_details = $customField->$cf_details_var;
                             } else {
@@ -172,7 +172,7 @@
                         <div class="custom-field-value card mb-3 py-2 px-3 rounded-2">
                             <?php
                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                             if ($customField->$cf_details_var != "") {
                                 $cf_details = $customField->$cf_details_var;
                             } else {

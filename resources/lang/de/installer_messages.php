@@ -7,7 +7,7 @@ return [
      * Shared translations.
      *
      */
-    'title' => 'Smartend CMS Installer',
+    'title' => 'Spreinvents CMS Installer',
     'next' => 'Nächster Schritt',
     'back' => 'Zurück',
     'finish' => 'Installieren',
@@ -22,7 +22,7 @@ return [
      */
     'welcome' => [
         'templateTitle' => 'Willkommen',
-        'title' => 'Smartend CMS Installer',
+        'title' => 'Spreinvents CMS Installer',
         'message' => 'Einfacher Installations- und Einrichtungsassistent.',
         'next' => 'Anforderungen prüfen',
     ],
@@ -187,12 +187,12 @@ return [
     'final' => [
         'title' => 'Installation abgeschlossen',
         'templateTitle' => 'Installation abgeschlossen',
-        'finished' => 'Smartend wurde erfolgreich installiert.',
+        'finished' => 'Spreinvents wurde erfolgreich installiert.',
         'migration' => 'Migration &amp; Seed Console Output:',
         'console' => 'Ausgabe der Anwendungskonsole:',
         'log' => 'Installationsprotokolleintrag:',
         'env' => 'Endgültige .env-Datei:',
-        'exit' => 'Zum Smartend Dashboard gehen',
+        'exit' => 'Zum Spreinvents Dashboard gehen',
     ],
 
     /**

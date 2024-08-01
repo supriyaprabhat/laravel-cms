@@ -41,11 +41,11 @@ $TextBanners = Helper::BannersList(Helper::GeneralWebmasterSettings("home_text_b
     @endforeach
     <?php
     $title_var = "title_" . @Helper::currentLanguage()->code;
-    $title_var2 = "title_" . config('smartend.default_language');
+    $title_var2 = "title_" . config('spreinvents.default_language');
     $details_var = "details_" . @Helper::currentLanguage()->code;
-    $details_var2 = "details_" . config('smartend.default_language');
+    $details_var2 = "details_" . config('spreinvents.default_language');
     $file_var = "file_" . @Helper::currentLanguage()->code;
-    $file_var2 = "file_" . config('smartend.default_language');
+    $file_var2 = "file_" . config('spreinvents.default_language');
     $link_var = "link_" . @Helper::currentLanguage()->code;
 
     $col_width = 12;

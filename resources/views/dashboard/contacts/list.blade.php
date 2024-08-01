@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if($Contacts->total() > config('smartend.backend_pagination'))
+                        @if($Contacts->total() > config('spreinvents.backend_pagination'))
                             <div class="p-a b-t text-center">
                                 {!! $Contacts->links() !!}
                             </div>

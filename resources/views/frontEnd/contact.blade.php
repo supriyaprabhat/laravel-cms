@@ -4,9 +4,9 @@
     <div>
         <?php
         $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . config('smartend.default_language');
+        $title_var2 = "title_" . config('spreinvents.default_language');
         $details_var = "details_" . @Helper::currentLanguage()->code;
-        $details_var2 = "details_" . config('smartend.default_language');
+        $details_var2 = "details_" . config('spreinvents.default_language');
         if ($Topic->$title_var != "") {
             $title = $Topic->$title_var;
         } else {
@@ -234,7 +234,7 @@
                             {!! Form::textarea('contact_message','', array('placeholder' => __('frontend.message'),'class' => 'form-control','id'=>'contact_message','rows'=>'10','required'=>'required')) !!}
                         </div>
 
-                        @if(config('smartend.nocaptcha_status'))
+                        @if(config('spreinvents.nocaptcha_status'))
                             <div class="form-group mb-3">
                                 {!! NoCaptcha::renderJs(@Helper::currentLanguage()->code) !!}
                                 {!! NoCaptcha::display() !!}

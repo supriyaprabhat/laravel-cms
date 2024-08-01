@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.master')
 <?php
 $title_var = "title_" . @Helper::currentLanguage()->code;
-$title_var2 = "title_" . config('smartend.default_language');
+$title_var2 = "title_" . config('spreinvents.default_language');
 if ($WebmasterSection->$title_var != "") {
     $WebmasterSectionTitle = $WebmasterSection->$title_var;
 } else {
@@ -21,7 +21,7 @@ if ($WebmasterSection->$title_var != "") {
             <div class="box-header dker">
                 <?php
                 $title_var = "title_" . @Helper::currentLanguage()->code;
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 if ($WebmasterSection->$title_var != "") {
                     $WebmasterSectionTitle = $WebmasterSection->$title_var;
                 } else {
@@ -62,9 +62,9 @@ if ($WebmasterSection->$title_var != "") {
         </div>
         <?php
         $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . config('smartend.default_language');
+        $title_var2 = "title_" . config('spreinvents.default_language');
         $details_var = "details_" . @Helper::currentLanguage()->code;
-        $details_var2 = "details_" . config('smartend.default_language');
+        $details_var2 = "details_" . config('spreinvents.default_language');
         if ($Topic->$title_var != "") {
             $title = $Topic->$title_var;
         } else {
@@ -182,7 +182,7 @@ if ($WebmasterSection->$title_var != "") {
                             <div class="col-sm-12">
                                 <?php
                                 $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-                                $cf_title_var2 = "title_" . config('smartend.default_language');
+                                $cf_title_var2 = "title_" . config('spreinvents.default_language');
                                 ?>
                                 @foreach($Topic->webmasterSection->customFields as $customField)
                                     <?php
@@ -330,7 +330,7 @@ if ($WebmasterSection->$title_var != "") {
                                                     <div class="col-sm-10">
                                                         <?php
                                                         $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                                        $cf_details_var2 = "details_" . config('smartend.default_language');
+                                                        $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                                         if ($customField->$cf_details_var != "") {
                                                             $cf_details = $customField->$cf_details_var;
                                                         } else {
@@ -360,7 +360,7 @@ if ($WebmasterSection->$title_var != "") {
                                                     <div class="col-sm-10">
                                                         <?php
                                                         $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                                        $cf_details_var2 = "details_" . config('smartend.default_language');
+                                                        $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                                         if ($customField->$cf_details_var != "") {
                                                             $cf_details = $customField->$cf_details_var;
                                                         } else {
@@ -564,9 +564,9 @@ if ($WebmasterSection->$title_var != "") {
                                         <div class="bottom-article newcomment">
                                             <?php
                                             $title_var = "title_" . @Helper::currentLanguage()->code;
-                                            $title_var2 = "title_" . config('smartend.default_language');
+                                            $title_var2 = "title_" . config('spreinvents.default_language');
                                             $slug_var = "seo_url_slug_" . @Helper::currentLanguage()->code;
-                                            $slug_var2 = "seo_url_slug_" . config('smartend.default_language');
+                                            $slug_var2 = "seo_url_slug_" . config('spreinvents.default_language');
                                             ?>
                                             @foreach($Topic->relatedTopics as $relatedTopic)
                                                 <?php
@@ -657,7 +657,7 @@ if ($WebmasterSection->$title_var != "") {
                                         <div class="validation"></div>
                                     </div>
 
-                                    @if(config('smartend.nocaptcha_status'))
+                                    @if(config('spreinvents.nocaptcha_status'))
                                         <div class="form-group">
                                             {!! NoCaptcha::renderJs(@Helper::currentLanguage()->code) !!}
                                             {!! NoCaptcha::display() !!}
@@ -716,7 +716,7 @@ if ($WebmasterSection->$title_var != "") {
                                         <div class="validation"></div>
                                     </div>
 
-                                    @if(config('smartend.nocaptcha_status'))
+                                    @if(config('spreinvents.nocaptcha_status'))
                                         <div class="form-group">
                                             {!! NoCaptcha::renderJs(@Helper::currentLanguage()->code) !!}
                                             {!! NoCaptcha::display() !!}
@@ -774,7 +774,7 @@ if ($WebmasterSection->$title_var != "") {
         $map_details_var = "details_" . @Helper::currentLanguage()->code;
         ?>
         <script type="text/javascript"
-                src="//maps.google.com/maps/api/js?key={{ config('smartend.google_maps_key') }}&language={{@Helper::currentLanguage()->code}}&callback=Function.prototype"></script>
+                src="//maps.google.com/maps/api/js?key={{ config('spreinvents.google_maps_key') }}&language={{@Helper::currentLanguage()->code}}&callback=Function.prototype"></script>
 
         <script type="text/javascript">
             // var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';

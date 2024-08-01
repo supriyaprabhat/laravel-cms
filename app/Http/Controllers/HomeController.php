@@ -63,7 +63,7 @@ class HomeController extends Controller
             $part6 = "";
         } else {
             // get default lang
-            $lang = config('smartend.default_language');
+            $lang = config('spreinvents.default_language');
             $this->set_language($lang);
         }
 
@@ -302,7 +302,7 @@ class HomeController extends Controller
                 $MostViewedTopics = clone $TopicsList;
 
                 // order and paginate
-                $TopicsList = $TopicsList->orderby('date', config('smartend.frontend_topics_order'))->orderby('id', config('smartend.frontend_topics_order'))->paginate(config('smartend.frontend_pagination'));
+                $TopicsList = $TopicsList->orderby('date', config('spreinvents.frontend_topics_order'))->orderby('id', config('spreinvents.frontend_topics_order'))->paginate(config('spreinvents.frontend_pagination'));
 
                 // Get Most Viewed Topics
                 $MostViewedTopics = $MostViewedTopics->orderby('visits', 'desc')->limit(3)->get();
@@ -523,7 +523,7 @@ class HomeController extends Controller
 
                 $TopicsList = $TopicsList->wherein("id", $TopicIds);
                 // order and paginate
-                $TopicsList = $TopicsList->orderby('date', config('smartend.frontend_topics_order'))->orderby('id', config('smartend.frontend_topics_order'))->paginate(config('smartend.frontend_pagination'));
+                $TopicsList = $TopicsList->orderby('date', config('spreinvents.frontend_topics_order'))->orderby('id', config('spreinvents.frontend_topics_order'))->paginate(config('spreinvents.frontend_pagination'));
 
                 $lang = @Helper::currentLanguage()->code;
 
@@ -575,7 +575,7 @@ class HomeController extends Controller
             'contact_subject' => 'required',
             'contact_message' => 'required'
         ];
-        if (config('smartend.nocaptcha_status')) {
+        if (config('spreinvents.nocaptcha_status')) {
             $validation['g-recaptcha-response'] = 'required|captcha';
         }
         $validator = Validator::make($request->all(), $validation);
@@ -663,7 +663,7 @@ class HomeController extends Controller
             'topic_id' => 'required',
             'comment_email' => 'required|email'
         ];
-        if (config('smartend.nocaptcha_status')) {
+        if (config('spreinvents.nocaptcha_status')) {
             $validation['g-recaptcha-response'] = 'required|captcha';
         }
         $validator = Validator::make($request->all(), $validation);
@@ -730,7 +730,7 @@ class HomeController extends Controller
             'topic_id' => 'required',
             'order_email' => 'required|email',
         ];
-        if (config('smartend.nocaptcha_status')) {
+        if (config('spreinvents.nocaptcha_status')) {
             $validation['g-recaptcha-response'] = 'required|captcha';
         }
         $validator = Validator::make($request->all(), $validation);
@@ -801,7 +801,7 @@ class HomeController extends Controller
             'video_file' => 'mimes:mp4,ogv,webm'
         ];
 
-        if (config('smartend.nocaptcha_status')) {
+        if (config('spreinvents.nocaptcha_status')) {
             $validate_inputs['g-recaptcha-response'] = 'required|captcha';
         }
 
@@ -980,7 +980,7 @@ class HomeController extends Controller
                 if (count($Topic->webmasterSection->customFields) > 0) {
                     $fields_details .= "<hr>";
                     $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-                    $cf_title_var2 = "title_" . config('smartend.default_language');
+                    $cf_title_var2 = "title_" . config('spreinvents.default_language');
                     $i = 0;
                     foreach ($Topic->webmasterSection->customFields as $customField) {
                         if ($customField->$cf_title_var != "") {
@@ -1016,7 +1016,7 @@ class HomeController extends Controller
                                 //
                             } elseif ($customField->type == 7) {
                                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                $cf_details_var2 = "details_" . config('smartend.default_language');
+                                $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                 if ($customField->$cf_details_var != "") {
                                     $cf_details = $customField->$cf_details_var;
                                 } else {
@@ -1035,7 +1035,7 @@ class HomeController extends Controller
                                 $fields_details .= "</div>";
                             } elseif ($customField->type == 6) {
                                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                $cf_details_var2 = "details_" . config('smartend.default_language');
+                                $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                 if ($customField->$cf_details_var != "") {
                                     $cf_details = $customField->$cf_details_var;
                                 } else {

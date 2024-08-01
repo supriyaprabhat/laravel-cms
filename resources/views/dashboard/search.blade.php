@@ -64,7 +64,7 @@
 
                     <?php
                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                    $title_var2 = "title_" . config('smartend.default_language');
+                    $title_var2 = "title_" . config('spreinvents.default_language');
                     $details_var = "details_" . @Helper::currentLanguage()->code;
                     ?>
                     @foreach($Topics as $Topic)
@@ -136,7 +136,7 @@
                         <ul class="list m-b-0">
                             <?php
                             $title_var = "title_" . @Helper::currentLanguage()->code;
-                            $title_var2 = "title_" . config('smartend.default_language');
+                            $title_var2 = "title_" . config('spreinvents.default_language');
                             ?>
                             @foreach($Sections as $Section)
                                 <?php

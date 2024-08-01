@@ -126,7 +126,7 @@ if (!Helper::GeneralSiteSettings("style_subscribe")) {
                     . <a href="#">{{Helper::GeneralSiteSettings($site_title_var)}}</a>
                 </div>
                 <div class="credits">
-                    Powered by <a href="https://smartend.app">Smartend</a>
+                    Powered by <a href="https://spreinvents.app">spreinvents</a>
                 </div>
             </div>
             @include("frontEnd.layouts.social",["tt_position"=>"top"])

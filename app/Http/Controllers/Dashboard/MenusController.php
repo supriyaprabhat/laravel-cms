@@ -37,17 +37,17 @@ class MenusController extends Controller
         if ($ParentMenuId > 0) {
             $EditedMenu = Menu::find($ParentMenuId);
             $Menus = Menu::where('father_id', $ParentMenuId)->orderby('row_no',
-                'asc')->paginate(config('smartend.backend_pagination'));
+                'asc')->paginate(config('spreinvents.backend_pagination'));
         } else {
             $MenusCount = Menu::where('father_id', '0')->count();
             if ($MenusCount > 0) {
                 $Menusfirst = Menu::where('father_id', '0')->orderby('row_no', 'asc')->first();
                 $ParentMenuId = $Menusfirst->id;
                 $Menus = Menu::where('father_id', $Menusfirst->id)->orderby('row_no',
-                    'asc')->paginate(config('smartend.backend_pagination'));
+                    'asc')->paginate(config('spreinvents.backend_pagination'));
                 $EditedMenu = Menu::find($Menusfirst->id);
             } else {
-                $Menus = Menu::where('father_id', '0')->orderby('row_no', 'asc')->paginate(config('smartend.backend_pagination'));
+                $Menus = Menu::where('father_id', '0')->orderby('row_no', 'asc')->paginate(config('spreinvents.backend_pagination'));
                 $EditedMenu = "";
             }
         }

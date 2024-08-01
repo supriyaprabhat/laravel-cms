@@ -136,7 +136,7 @@
                         <tbody>
                         <?php
                         $title_var = "title_" . @Helper::currentLanguage()->code;
-                        $title_var2 = "title_" . config('smartend.default_language');
+                        $title_var2 = "title_" . config('spreinvents.default_language');
                         ?>
                         @foreach($Topic->attachFiles as $file)
                             <?php

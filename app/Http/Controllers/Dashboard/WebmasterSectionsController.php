@@ -46,9 +46,9 @@ class WebmasterSectionsController extends Controller
         $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
         // General END
         if (@Auth::user()->permissionsGroup->view_status) {
-            $WebmasterSections = WebmasterSection::where('created_by', '=', Auth::user()->id)->orderby('row_no', 'asc')->paginate(config('smartend.backend_pagination'));
+            $WebmasterSections = WebmasterSection::where('created_by', '=', Auth::user()->id)->orderby('row_no', 'asc')->paginate(config('spreinvents.backend_pagination'));
         } else {
-            $WebmasterSections = WebmasterSection::orderby('row_no', 'asc')->paginate(config('smartend.backend_pagination'));
+            $WebmasterSections = WebmasterSection::orderby('row_no', 'asc')->paginate(config('spreinvents.backend_pagination'));
         }
         return view("dashboard.modules.list", compact("WebmasterSections", "GeneralWebmasterSections"));
     }

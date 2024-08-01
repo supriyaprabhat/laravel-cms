@@ -45,9 +45,9 @@ class PopupController extends Controller
         // General END
 
         if (@Auth::user()->permissionsGroup->view_status) {
-            $Popups = Popup::where('created_by', '=', Auth::user()->id)->orderby('row_no', 'asc')->paginate(config('smartend.backend_pagination'));
+            $Popups = Popup::where('created_by', '=', Auth::user()->id)->orderby('row_no', 'asc')->paginate(config('spreinvents.backend_pagination'));
         } else {
-            $Popups = Popup::orderby('row_no', 'asc')->paginate(config('smartend.backend_pagination'));
+            $Popups = Popup::orderby('row_no', 'asc')->paginate(config('spreinvents.backend_pagination'));
         }
         if (count($Popups) == 0) {
             // check lang cols after update

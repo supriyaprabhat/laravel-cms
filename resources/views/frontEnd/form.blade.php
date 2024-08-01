@@ -88,7 +88,7 @@
                                 <option value=""> - - {!!  __('backend.select') !!} - -</option>
                                 <?php
                                 $title_var = "title_" . @Helper::currentLanguage()->code;
-                                $title_var2 = "title_" . config('smartend.default_language');
+                                $title_var2 = "title_" . config('spreinvents.default_language');
                                 $t_arrow = "&raquo;";
                                 ?>
                                 @foreach ($fatherSections as $fatherSection)
@@ -161,7 +161,7 @@
                     @if(count($WebmasterSection->customFields) >0)
                         <?php
                         $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-                        $cf_title_var2 = "title_" . config('smartend.default_language');
+                        $cf_title_var2 = "title_" . config('spreinvents.default_language');
                         ?>
                         @foreach($WebmasterSection->customFields as $customField)
                             <?php
@@ -238,7 +238,7 @@
                                             {!! $cf_lang_identifier !!}</label>
                                         <?php
                                         $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                        $cf_details_var2 = "details_" . config('smartend.default_language');
+                                        $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                         if ($customField->$cf_details_var != "") {
                                             $cf_details = $customField->$cf_details_var;
                                         } else {
@@ -333,7 +333,7 @@
                                                 class="form-control select2-multiple" multiple {{$cf_required}}>
                                             <?php
                                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                             if ($customField->$cf_details_var != "") {
                                                 $cf_details = $customField->$cf_details_var;
                                             } else {
@@ -363,7 +363,7 @@
                                             <option value="">- - {!!  $cf_title !!} - -</option>
                                             <?php
                                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                             if ($customField->$cf_details_var != "") {
                                                 $cf_details = $customField->$cf_details_var;
                                             } else {
@@ -444,7 +444,7 @@
 
 
                     <div class="col-lg-4 col-md-12">
-                        @if(config('smartend.nocaptcha_status'))
+                        @if(config('spreinvents.nocaptcha_status'))
                             <div class="form-group mb-3">
                                 {!! NoCaptcha::renderJs(@Helper::currentLanguage()->code) !!}
                                 {!! NoCaptcha::display() !!}

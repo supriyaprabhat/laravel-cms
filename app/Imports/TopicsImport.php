@@ -53,7 +53,7 @@ class TopicsImport implements ToCollection
                 $total_rows_count = 0;
 
                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                $cf_details_var2 = "details_" . config('smartend.default_language');
+                $cf_details_var2 = "details_" . config('spreinvents.default_language');
 
                 foreach ($rows as $row) {
                     if ($row->filter()->isNotEmpty()) {

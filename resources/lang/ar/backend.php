@@ -678,7 +678,7 @@ return array(
     'noResults' => 'لا يوجد أي نتائج ،، برجاء اعادة المحاولة',
     'systemUpdate' => 'تحديث النظام',
     'systemLicenseAndUpdate' => 'تحديث وترخيص النظام',
-    'activateLicenceForUpdate' => 'أنت بحاجة لتفعيل ترخيص استخدام نظام Smartend أولا لتلقي التحديثات',
+    'activateLicenceForUpdate' => 'أنت بحاجة لتفعيل ترخيص استخدام نظام Spreinvents أولا لتلقي التحديثات',
     'domainName' => 'اسم النطاق',
     'purchaseCode' => 'كود شراء',
     'purchaseCodeIsRequired' => 'يرجى كتابة كود التحقق للمتابعة',

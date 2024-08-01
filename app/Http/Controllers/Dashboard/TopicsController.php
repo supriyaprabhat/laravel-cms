@@ -63,7 +63,7 @@ class TopicsController extends Controller
             foreach ($WebmasterSection->customFields as $customField) {
                 if ($customField->in_statics && ($customField->type == 6 || $customField->type == 7)) {
                     $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                    $cf_details_var2 = "details_" . config('smartend.default_language');
+                    $cf_details_var2 = "details_" . config('spreinvents.default_language');
                     if ($customField->$cf_details_var != "") {
                         $cf_details = $customField->$cf_details_var;
                     } else {
@@ -99,7 +99,7 @@ class TopicsController extends Controller
     {
 
         $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . config('smartend.default_language');
+        $title_var2 = "title_" . config('spreinvents.default_language');
 
         $limit = $request->input('length');
         $start = $request->input('start');
@@ -274,7 +274,7 @@ class TopicsController extends Controller
                                 }
                             } elseif ($customField->type == 7) {
                                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                $cf_details_var2 = "details_" . config('smartend.default_language');
+                                $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                 if ($customField->$cf_details_var != "") {
                                     $cf_details = $customField->$cf_details_var;
                                 } else {
@@ -292,7 +292,7 @@ class TopicsController extends Controller
                                 $cf_data = "<div class='text-center'> <i class=\"fa " . (($cf_saved_val == 1) ? "fa-check text-success" : "fa-times text-danger") . " inline\"></i> " . (($cf_saved_val == 1) ? __('backend.yes') : __('backend.no')) . "</div>";
                             } elseif ($customField->type == 6 || $customField->type == 13) {
                                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                $cf_details_var2 = "details_" . config('smartend.default_language');
+                                $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                 if ($customField->$cf_details_var != "") {
                                     $cf_details = $customField->$cf_details_var;
                                 } else {
@@ -446,7 +446,7 @@ class TopicsController extends Controller
     {
 
         $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . config('smartend.default_language');
+        $title_var2 = "title_" . config('spreinvents.default_language');
 
         \Cookie::queue("user_documents_page_order", 3, 31104000);
 
@@ -2429,7 +2429,7 @@ class TopicsController extends Controller
                     if (count($Topic->webmasterSection->customFields) > 0) {
                         $fields_details .= "<hr>";
                         $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-                        $cf_title_var2 = "title_" . config('smartend.default_language');
+                        $cf_title_var2 = "title_" . config('spreinvents.default_language');
                         $i = 0;
                         foreach ($Topic->webmasterSection->customFields as $customField) {
                             if ($customField->$cf_title_var != "") {
@@ -2465,7 +2465,7 @@ class TopicsController extends Controller
                                     //
                                 } elseif ($customField->type == 7) {
                                     $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                    $cf_details_var2 = "details_" . config('smartend.default_language');
+                                    $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                     if ($customField->$cf_details_var != "") {
                                         $cf_details = $customField->$cf_details_var;
                                     } else {
@@ -2484,7 +2484,7 @@ class TopicsController extends Controller
                                     $fields_details .= "</div>";
                                 } elseif ($customField->type == 6) {
                                     $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                    $cf_details_var2 = "details_" . config('smartend.default_language');
+                                    $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                     if ($customField->$cf_details_var != "") {
                                         $cf_details = $customField->$cf_details_var;
                                     } else {

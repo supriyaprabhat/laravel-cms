@@ -53,7 +53,7 @@ class CategoriesController extends Controller
             });
         }
 
-        $Sections = $Sections->orderby('row_no', 'asc')->paginate(config('smartend.backend_pagination'));
+        $Sections = $Sections->orderby('row_no', 'asc')->paginate(config('spreinvents.backend_pagination'));
 
         return view("dashboard.categories.list", compact("Sections", "GeneralWebmasterSections", "WebmasterSection"));
     }

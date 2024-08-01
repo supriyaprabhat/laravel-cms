@@ -81,7 +81,7 @@
             @foreach(Helper::languagesList() as $ActiveLanguage)
                 <?php
                 $link = route('siteMapByLang', $ActiveLanguage->code);
-                if ($ActiveLanguage->code == config('smartend.default_language')) {
+                if ($ActiveLanguage->code == config('spreinvents.default_language')) {
                     $link = route('siteMap');
                 }
                 ?>

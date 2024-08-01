@@ -15,7 +15,7 @@
 @section('content')
     <?php
     $title_var = "title_" . @Helper::currentLanguage()->code;
-    $title_var2 = "title_" . config('smartend.default_language');
+    $title_var2 = "title_" . config('spreinvents.default_language');
     ?>
     <div class="padding">
         <div class="row-col">
@@ -590,11 +590,11 @@
                 },
                 success: function (result) {
                     if (result.status === 'success') {
-                        $("#system_updates").html("<div class='b-a p-a-2 white dk' dir='ltr'><h4 class='m-b-0'>Smartend CMS <strong>" + result.version + "</strong></h4><div class='text-muted'> <i class='fa fa-calendar'></i> " + result.date + "</div><div class='m-t'>" + result.change_log + "</div><div class='m-t'><label class='md-check'><input type='checkbox' class='agreement has-value' value='1'><i class='green'></i><span class='agreement_text'>I agree to update and overwrite system files.<span></label></div><button type='button' class='btn btn-lg success m-t-sm' onclick=\"check_for_updates('install_updates','{{ __("backend.updateInProgress") }}')\">Update Now</button></div>");
+                        $("#system_updates").html("<div class='b-a p-a-2 white dk' dir='ltr'><h4 class='m-b-0'>spreinvents CMS <strong>" + result.version + "</strong></h4><div class='text-muted'> <i class='fa fa-calendar'></i> " + result.date + "</div><div class='m-t'>" + result.change_log + "</div><div class='m-t'><label class='md-check'><input type='checkbox' class='agreement has-value' value='1'><i class='green'></i><span class='agreement_text'>I agree to update and overwrite system files.<span></label></div><button type='button' class='btn btn-lg success m-t-sm' onclick=\"check_for_updates('install_updates','{{ __("backend.updateInProgress") }}')\">Update Now</button></div>");
                     } else if (result.status === 'upgrade') {
-                        $("#system_updates").html("<div class='b-a p-a-2 white dk' dir='ltr'><h4 class='m-b-0'>Smartend CMS <strong>" + result.version + "</strong></h4><div class='text-muted'> <i class='fa fa-calendar'></i> " + result.date + "</div><div class='m-t'>" + result.change_log + "</div><div class=' m-t b-a b-danger p-a'><h5 class='text-danger m-b-sm'>You need to upgrade your PHP version to >= " + result.php + "</h5>Current PHP version is {{ phpversion() }}</div></div>");
+                        $("#system_updates").html("<div class='b-a p-a-2 white dk' dir='ltr'><h4 class='m-b-0'>spreinvents CMS <strong>" + result.version + "</strong></h4><div class='text-muted'> <i class='fa fa-calendar'></i> " + result.date + "</div><div class='m-t'>" + result.change_log + "</div><div class=' m-t b-a b-danger p-a'><h5 class='text-danger m-b-sm'>You need to upgrade your PHP version to >= " + result.php + "</h5>Current PHP version is {{ phpversion() }}</div></div>");
                     } else if (result.status === 'upto_date' || result.status === 'updated') {
-                        $("#system_updates").html("<div class='b-a p-a-2 white dk'><h4>Smartend CMS <strong>" + result.version + "</strong></h4><h5 class='text-success m-t' style='line-height: 30px'>" + result.msg + "</h5></div>");
+                        $("#system_updates").html("<div class='b-a p-a-2 white dk'><h4>spreinvents CMS <strong>" + result.version + "</strong></h4><h5 class='text-success m-t' style='line-height: 30px'>" + result.msg + "</h5></div>");
                         if (result.status === 'updated') {
                             swal({
                                 title: "<span class='text-success'>" + result.msg + "</span>",

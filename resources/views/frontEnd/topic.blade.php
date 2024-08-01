@@ -4,9 +4,9 @@
     <div>
         <?php
         $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . config('smartend.default_language');
+        $title_var2 = "title_" . config('spreinvents.default_language');
         $details_var = "details_" . @Helper::currentLanguage()->code;
-        $details_var2 = "details_" . config('smartend.default_language');
+        $details_var2 = "details_" . config('spreinvents.default_language');
         if ($Topic->$title_var != "") {
             $title = $Topic->$title_var;
         } else {

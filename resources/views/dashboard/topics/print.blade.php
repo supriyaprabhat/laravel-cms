@@ -1,9 +1,9 @@
 <?php
 $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-$cf_title_var2 = "title_" . config('smartend.default_language');
+$cf_title_var2 = "title_" . config('spreinvents.default_language');
 
 $title_var = "title_" . @Helper::currentLanguage()->code;
-$title_var2 = "title_" . config('smartend.default_language');
+$title_var2 = "title_" . config('spreinvents.default_language');
 if ($WebmasterSection->$title_var != "") {
     $WebmasterSectionTitle = $WebmasterSection->$title_var;
 } else {
@@ -77,7 +77,7 @@ if ($WebmasterSection->$title_var != "") {
                                 $cf_data = (($cf_saved_val == 1) ? ("&check; " . __('backend.yes')) : ("&#x2A09; " . __('backend.no')));
                             } elseif ($customField->type == 7) {
                                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                $cf_details_var2 = "details_" . config('smartend.default_language');
+                                $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                 if ($customField->$cf_details_var != "") {
                                     $cf_details = $customField->$cf_details_var;
                                 } else {
@@ -95,7 +95,7 @@ if ($WebmasterSection->$title_var != "") {
                                 }
                             } elseif ($customField->type == 6 || $customField->type == 13) {
                                 $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                $cf_details_var2 = "details_" . config('smartend.default_language');
+                                $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                 if ($customField->$cf_details_var != "") {
                                     $cf_details = $customField->$cf_details_var;
                                 } else {

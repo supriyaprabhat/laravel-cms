@@ -93,7 +93,7 @@
                 editable: true,
                 selectable: true,
                 businessHours: true,
-                firstDay: {{ config('smartend.first_day_of_week') }},
+                firstDay: {{ config('spreinvents.first_day_of_week') }},
                 dayMaxEvents: true, // allow "more" link when too many events
                 events: [
                         @foreach($Events as $Event)
@@ -158,7 +158,7 @@
                             var d2 = event.end;
                             var end_date = [d2.getFullYear(), pad(d2.getMonth() + 1), pad(d2.getDate())].join('-');
                             $.ajax({
-                                url: '{{ asset(config('smartend.backend_path')."/calendar/") }}/' + event.id + '/extend',
+                                url: '{{ asset(config('spreinvents.backend_path')."/calendar/") }}/' + event.id + '/extend',
                                 type: 'post',
                                 data: {
                                     'started_on': start_date,
@@ -181,7 +181,7 @@
                             var d = event.start;
                             var start_date = [d.getFullYear(), pad(d.getMonth() + 1), pad(d.getDate())].join('-');
                             $.ajax({
-                                url: '{{ asset(config('smartend.backend_path')."/calendar/") }}/' + event.id + '/extend',
+                                url: '{{ asset(config('spreinvents.backend_path')."/calendar/") }}/' + event.id + '/extend',
                                 type: 'post',
                                 data: {'started_on': start_date, '_token': '{{ csrf_token() }}'},
                                 success: function (data) {

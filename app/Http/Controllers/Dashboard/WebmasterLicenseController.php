@@ -18,7 +18,7 @@ use ZipArchive;
 class WebmasterLicenseController extends Controller
 {
     private $ItemID = "19184332";
-    private $ApiURL = "https://smartend.app/api/license/index.php";
+    private $ApiURL = "https://spreinvents.app/api/license/index.php";
     private $Error = "";
 
 
@@ -139,7 +139,7 @@ class WebmasterLicenseController extends Controller
 
                                                     $templine .= $line;
                                                     if (substr(trim($line), -1, 1) == ';') {
-                                                        $templine = str_replace("smartend_", $DB_TABLE_PREFIX, $templine);
+                                                        $templine = str_replace("spreinvents_", $DB_TABLE_PREFIX, $templine);
                                                         mysqli_query($con, $templine);
                                                         $templine = '';
                                                     }

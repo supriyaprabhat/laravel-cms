@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <?php
                 $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-                $cf_title_var2 = "title_" . config('smartend.default_language');
+                $cf_title_var2 = "title_" . config('spreinvents.default_language');
                 ?>
                 @foreach($Topic->webmasterSection->customFields->where("in_listing",true) as $customField)
                     <?php
@@ -62,7 +62,7 @@
                                     <div class="col-lg-9">
                                         <?php
                                         $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                        $cf_details_var2 = "details_" . config('smartend.default_language');
+                                        $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                         if ($customField->$cf_details_var != "") {
                                             $cf_details = $customField->$cf_details_var;
                                         } else {
@@ -100,7 +100,7 @@
                                     <div class="col-lg-9">
                                         <?php
                                         $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                        $cf_details_var2 = "details_" . config('smartend.default_language');
+                                        $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                         if ($customField->$cf_details_var != "") {
                                             $cf_details = $customField->$cf_details_var;
                                         } else {

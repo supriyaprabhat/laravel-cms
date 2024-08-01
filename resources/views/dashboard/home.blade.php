@@ -43,7 +43,7 @@
             @else
                 <div class="row">
                 <?php
-                    if (config('smartend.geoip_status')){
+                    if (config('spreinvents.geoip_status')){
                         $ik_limit = 4;
                         $b_cls = 6;
                         $r_cls = "col-sm-12 col-md-5 col-lg-4";
@@ -60,7 +60,7 @@
                             $clr_ary = array("info", "warn", "success", "accent","primary","danger");
                             $ik = 0;
                             $mnu_title_var = "title_" . @Helper::currentLanguage()->code;
-                            $mnu_title_var2 = "title_" . config('smartend.default_language');
+                            $mnu_title_var2 = "title_" . config('spreinvents.default_language');
                             ?>
                             @foreach($GeneralWebmasterSections as $headerWebmasterSection)
                                 @if(in_array($headerWebmasterSection->id,$data_sections_arr))
@@ -122,7 +122,7 @@
                                     @endif
                                 @endif
                             @endforeach
-                            @if (config('smartend.geoip_status'))
+                            @if (config('spreinvents.geoip_status'))
                                 <div class="col-xs-12">
                                     <div class="row-col box-color text-center primary">
                                         <div class="row-cell p-a">
@@ -138,7 +138,7 @@
                             @endif
                         </div>
                     </div>
-                    @if (config('smartend.geoip_status'))
+                    @if (config('spreinvents.geoip_status'))
                         <div class="col-sm-12 col-md-7 col-lg-8">
                             <div class="row-col box bg">
                                 <div class="col-sm-8">
@@ -251,7 +251,7 @@
                         </div>
                     @endif
                 </div>
-                @if (config('smartend.geoip_status'))
+                @if (config('spreinvents.geoip_status'))
                     <div class="row">
                         <div class="col-md-12 col-xl-4">
                             <div class="box">

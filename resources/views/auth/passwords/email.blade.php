@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.auth')
 @section('title', __('backend.forgotPassword'))
 @section('content')
-    @if(config('smartend.mail_driver') != "" && config('smartend.mail_username') !="" && config('smartend.mail_password'))
+    @if(config('spreinvents.mail_driver') != "" && config('spreinvents.mail_username') !="" && config('spreinvents.mail_password'))
         <div class="center-block w-xxl p-a-2">
             <div class="p-a-md box-color r box-shadow-z4 text-color">
                 <div class="text-center">
@@ -25,7 +25,7 @@
                 @endif
 
                 <form name="reset" method="POST"
-                      action="{{ url('/'.config('smartend.backend_path').'/password/email') }}">
+                      action="{{ url('/'.config('spreinvents.backend_path').'/password/email') }}">
                     {{ csrf_field() }}
                     <div class="md-form-group {{ $errors->has('email') ? ' has-error' : '' }}">
                         <input type="email" name="email" value="{{ old('email') }}" class="md-input" required>
@@ -45,7 +45,7 @@
 
                 <p id="alerts-container"></p>
                 <div class="p-v-lg text-center">{{ __('backend.returnTo') }} <a
-                        href="{{ url('/'.config('smartend.backend_path').'/login') }}"
+                        href="{{ url('/'.config('spreinvents.backend_path').'/login') }}"
                         class="text-primary _600">{{ __('backend.signIn') }}</a>
                 </div>
             </div>

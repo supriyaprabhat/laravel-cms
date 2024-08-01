@@ -7,9 +7,9 @@
     <div>
         <?php
         $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-        $cf_title_var2 = "title_" . config('smartend.default_language');
+        $cf_title_var2 = "title_" . config('spreinvents.default_language');
         $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . config('smartend.default_language');
+        $title_var2 = "title_" . config('spreinvents.default_language');
         $webmaster_section_title = "";
         $category_title = "";
         $page_title = "";
@@ -126,11 +126,11 @@
                                         <tbody>
                                         <?php
                                         $title_var = "title_" . @Helper::currentLanguage()->code;
-                                        $title_var2 = "title_" . config('smartend.default_language');
+                                        $title_var2 = "title_" . config('spreinvents.default_language');
                                         $details_var = "details_" . @Helper::currentLanguage()->code;
-                                        $details_var2 = "details_" . config('smartend.default_language');
+                                        $details_var2 = "details_" . config('spreinvents.default_language');
                                         $slug_var = "seo_url_slug_" . @Helper::currentLanguage()->code;
-                                        $slug_var2 = "seo_url_slug_" . config('smartend.default_language');
+                                        $slug_var2 = "seo_url_slug_" . config('spreinvents.default_language');
                                         $i = 0;
                                         ?>
                                         @foreach($Topics as $Topic)
@@ -219,7 +219,7 @@
 
                                                 } elseif ($customField->type == 7) {
                                                     $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                                    $cf_details_var2 = "details_" . config('smartend.default_language');
+                                                    $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                                     if ($customField->$cf_details_var != "") {
                                                         $cf_details = $customField->$cf_details_var;
                                                     } else {
@@ -235,7 +235,7 @@
                                                     }
                                                 } elseif ($customField->type == 6 || $customField->type == 13) {
                                                     $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                                    $cf_details_var2 = "details_" . config('smartend.default_language');
+                                                    $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                                     if ($customField->$cf_details_var != "") {
                                                         $cf_details = $customField->$cf_details_var;
                                                     } else {
@@ -310,7 +310,7 @@
                     @if($customField->in_statics && ($customField->type==6 || $customField->type==7))
                         <?php
                         $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                        $cf_details_var2 = "details_" . config('smartend.default_language');
+                        $cf_details_var2 = "details_" . config('spreinvents.default_language');
                         if ($customField->$cf_details_var != "") {
                             $cf_details = $customField->$cf_details_var;
                         } else {
@@ -356,7 +356,7 @@
             @if($customField->in_statics && ($customField->type==6 || $customField->type==7))
             <?php
             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-            $cf_details_var2 = "details_" . config('smartend.default_language');
+            $cf_details_var2 = "details_" . config('spreinvents.default_language');
             if ($customField->$cf_details_var != "") {
                 $cf_details = $customField->$cf_details_var;
             } else {

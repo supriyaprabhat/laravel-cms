@@ -18,7 +18,7 @@ class SiteMenu
         $Links = [];
         if (!empty($MenuLinks)) {
             $_title_var = "title_" . @Helper::currentLanguage()->code;
-            $_title_var2 = "title_" . config('smartend.default_language');
+            $_title_var2 = "title_" . config('spreinvents.default_language');
             $_link_var = "link_" . @Helper::currentLanguage()->code;
 
             foreach ($MenuLinks as $MenuLink) {
@@ -143,7 +143,7 @@ class SiteMenu
                         $link = @$MenuLink->$_link_var;
                     }
                     if ($link != "") {
-                        if (@Helper::currentLanguage()->code != config('smartend.default_language')) {
+                        if (@Helper::currentLanguage()->code != config('spreinvents.default_language')) {
                             $f3c = mb_substr($link, 0, 3);
                             if ($f3c == "htt" || $f3c == "www") {
                                 $this_link_url = $link;
@@ -172,7 +172,7 @@ class SiteMenu
                         $link = @$MenuLink->$_link_var;
                     }
                     if ($link != "") {
-                        if (@Helper::currentLanguage()->code != config('smartend.default_language')) {
+                        if (@Helper::currentLanguage()->code != config('spreinvents.default_language')) {
                             $f3c = mb_substr($link, 0, 3);
                             if ($f3c == "htt" || $f3c == "www") {
                                 $this_link_url = $link;

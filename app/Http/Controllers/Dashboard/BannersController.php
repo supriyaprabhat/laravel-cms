@@ -48,10 +48,10 @@ class BannersController extends Controller
         if (@Auth::user()->permissionsGroup->view_status) {
             $Banners = Banner::where('created_by', '=', Auth::user()->id)->orderby('section_id',
                 'asc')->orderby('row_no',
-                'asc')->paginate(config('smartend.backend_pagination'));
+                'asc')->paginate(config('spreinvents.backend_pagination'));
         } else {
             $Banners = Banner::orderby('section_id', 'asc')->orderby('row_no',
-                'asc')->paginate(config('smartend.backend_pagination'));
+                'asc')->paginate(config('spreinvents.backend_pagination'));
         }
         return view("dashboard.banners.list", compact("Banners", "GeneralWebmasterSections", "WebmasterBanners"));
     }

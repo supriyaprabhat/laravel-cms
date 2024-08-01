@@ -50,7 +50,7 @@ class WebmailsController extends Controller
                 //List of group Webmails
                 $Webmails = Webmail::where('created_by', '=', Auth::user()->id)->where('group_id', '=', $group_id)
                     ->where('cat_id', '=', 0)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "create") {
                 //if replay or forward
 
@@ -61,26 +61,26 @@ class WebmailsController extends Controller
             } elseif ($group_id == "sent") {
                 //List of Sent
                 $Webmails = Webmail::where('created_by', '=', Auth::user()->id)->where('cat_id', '=', 1)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "draft") {
                 //List of draft
                 $Webmails = Webmail::where('created_by', '=', Auth::user()->id)->where('cat_id', '=', 2)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "wait") {
                 //List Unread Webmails
                 $Webmails = Webmail::where('created_by', '=', Auth::user()->id)->where('status', '=', '0')
                     ->where('cat_id', '=', 0)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "blocked") {
                 //List readed Webmails
                 $Webmails = Webmail::where('created_by', '=', Auth::user()->id)->where('status', '=', '1')
                     ->where('cat_id', '=', 0)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 //List of all Webmails
                 $Webmails = Webmail::where('created_by', '=', Auth::user()->id)->orderby('id', 'desc')
                     ->where('cat_id', '=', 0)
-                    ->paginate(config('smartend.backend_pagination'));
+                    ->paginate(config('spreinvents.backend_pagination'));
             }
         } else {
             $WebmailsGroups = WebmailsGroup::orderby('id', 'asc')->get();
@@ -89,7 +89,7 @@ class WebmailsController extends Controller
                 //List of group Webmails
                 $Webmails = Webmail::where('group_id', '=', (int)$group_id)
                     ->where('cat_id', '=', 0)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "create") {
                 //if replay or forward
 
@@ -109,26 +109,26 @@ class WebmailsController extends Controller
 
                 //List of Sent
                 $Webmails = Webmail::where('cat_id', '=', 1)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "draft") {
                 //List of draft
                 $Webmails = Webmail::where('cat_id', '=', 2)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "wait") {
                 //List Unread Webmails
                 $Webmails = Webmail::where('status', '=', '0')
                     ->where('cat_id', '=', 0)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "blocked") {
                 //List readed Webmails
                 $Webmails = Webmail::where('status', '=', '1')
                     ->where('cat_id', '=', 0)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 //List of all Webmails
                 $Webmails = Webmail::orderby('id', 'desc')
                     ->where('cat_id', '=', 0)
-                    ->paginate(config('smartend.backend_pagination'));
+                    ->paginate(config('spreinvents.backend_pagination'));
             }
         }
 
@@ -187,7 +187,7 @@ class WebmailsController extends Controller
                     ->orwhere('from_phone', 'like', '%' . $request->q . '%')
                     ->orwhere('to_email', 'like', '%' . $request->q . '%')
                     ->orwhere('to_name', 'like', '%' . $request->q . '%')
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 return redirect()->action('Dashboard\WebmailsController@index');
             }
@@ -213,7 +213,7 @@ class WebmailsController extends Controller
                     ->orwhere('from_phone', 'like', '%' . $request->q . '%')
                     ->orwhere('to_email', 'like', '%' . $request->q . '%')
                     ->orwhere('to_name', 'like', '%' . $request->q . '%')
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 return redirect()->action('Dashboard\WebmailsController@index');
             }
@@ -336,7 +336,7 @@ class WebmailsController extends Controller
 
         if ($request->btn_clicked != "draft") {
             // SEND THIS EMAIL
-            if (config('smartend.mail_username') != "") {
+            if (config('spreinvents.mail_username') != "") {
 
                 $WebsiteSettings = Setting::find(1);
                 $site_title_var = "site_title_" . @Helper::currentLanguage()->code;
@@ -474,7 +474,7 @@ class WebmailsController extends Controller
 
             if ($request->btn_clicked != "draft") {
                 // SEND THIS EMAIL
-                if (config('smartend.mail_username') != "") {
+                if (config('spreinvents.mail_username') != "") {
                     Mail::send('emails.template', [
                         'title' => $request->title,
                         'details' => $request->details,

@@ -78,7 +78,7 @@ Restful Web Services: <br>
 { POST }   /api/v1/order <br>
 { POST }   /api/v1/contact <br>
 ---------------------------------------- <br>
-For more details check <a href='http://smartfordesign.net/smartend/documentation/api.html' target='_blank'><strong>API documentation</strong></a>
+For more details check <a href='http://smartfordesign.net/spreinvents/documentation/api.html' target='_blank'><strong>API documentation</strong></a>
 </div>
 </body>
 </html>
@@ -140,7 +140,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
         $Language = Language::where("status", true)->where("code", $lang)->first();
 
         if ($lang == "" || empty($Language)) {
-            $lang = config('smartend.default_language');
+            $lang = config('spreinvents.default_language');
         }
         return $lang;
     }
@@ -413,7 +413,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 $section_title = "";
                 $type = "";
                 $sections_status = "";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
 
                 // Response Details
                 $response_details = [];
@@ -473,7 +473,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $type = "";
                 $section_title = "";
 
@@ -581,9 +581,9 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $details_var = "details_$lang";
-                $details_var2 = "details_" . config('smartend.default_language');
+                $details_var2 = "details_" . config('spreinvents.default_language');
                 $type = "";
                 $section_title = "";
 
@@ -628,7 +628,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                                             // if multi check
                                             $cf_saved_val_array = explode(", ", $t_field->field_value);
                                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                             if ($customField->$cf_details_var != "") {
                                                 $cf_details = $customField->$cf_details_var;
                                             } else {
@@ -744,7 +744,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
 
             $Topics = Topic::where(function ($q) {
                 $q->where([['status', 1], ['expire_date', '>=', date("Y-m-d")], ['expire_date', '<>', null]])->orWhere([['status', 1], ['expire_date', null]]);
-            })->whereIn('id', $category_topics)->orderby('row_no', config('smartend.frontend_topics_order'))->orderby('id', config('smartend.frontend_topics_order'));
+            })->whereIn('id', $category_topics)->orderby('row_no', config('spreinvents.frontend_topics_order'))->orderby('id', config('spreinvents.frontend_topics_order'));
 
             if ($topics_count > 0) {
                 $Topics = $Topics->paginate($topics_count);
@@ -756,9 +756,9 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $details_var = "details_$lang";
-                $details_var2 = "details_" . config('smartend.default_language');
+                $details_var2 = "details_" . config('spreinvents.default_language');
                 $cat_title = "";
 
                 $CurrentCategory = Section::find($cat_id);
@@ -799,7 +799,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                                             // if multi check
                                             $cf_saved_val_array = explode(", ", $t_field->field_value);
                                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                             if ($customField->$cf_details_var != "") {
                                                 $cf_details = $customField->$cf_details_var;
                                             } else {
@@ -907,9 +907,9 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $details_var = "details_$lang";
-                $details_var2 = "details_" . config('smartend.default_language');
+                $details_var2 = "details_" . config('spreinvents.default_language');
 
                 $type = "";
                 $section_id = "";
@@ -952,7 +952,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                                             // if multi check
                                             $cf_saved_val_array = explode(", ", $t_field->field_value);
                                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                             if ($customField->$cf_details_var != "") {
                                                 $cf_details = $customField->$cf_details_var;
                                             } else {
@@ -1167,7 +1167,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $topic_title = "";
                 $photo_file = "";
 
@@ -1288,9 +1288,9 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $details_var = "details_$lang";
-                $details_var2 = "details_" . config('smartend.default_language');
+                $details_var2 = "details_" . config('spreinvents.default_language');
                 $topic_title = "";
                 $photo_file = "";
 
@@ -1381,9 +1381,9 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $details_var = "details_$lang";
-                $details_var2 = "details_" . config('smartend.default_language');
+                $details_var2 = "details_" . config('spreinvents.default_language');
 
                 if ($map->$title_var != "") {
                     $map_title = $map->$title_var;
@@ -1439,7 +1439,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $topic_title = "";
                 $photo_file = "";
 
@@ -1525,7 +1525,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 if ($AttachFile->$title_var != "") {
                     $attachFile_title = $AttachFile->$title_var;
                 } else {
@@ -1575,7 +1575,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $topic_title = "";
                 $photo_file = "";
 
@@ -1698,7 +1698,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $topic_title = "";
                 $photo_file = "";
 
@@ -1785,7 +1785,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 // By Language
                 $lang = $this->getLanguage($lang);
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $topic_title = "";
                 $photo_file = "";
 
@@ -1825,7 +1825,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                                             // if multi check
                                             $cf_saved_val_array = explode(", ", $t_field->field_value);
                                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                             if ($customField->$cf_details_var != "") {
                                                 $cf_details = $customField->$cf_details_var;
                                             } else {
@@ -1913,9 +1913,9 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 $lang = $this->getLanguage($lang);
 
                 $title_var = "title_$lang";
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 $details_var = "details_$lang";
-                $details_var2 = "details_" . config('smartend.default_language');
+                $details_var2 = "details_" . config('spreinvents.default_language');
                 $user_name = "";
 
                 // Response Details
@@ -1969,7 +1969,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                                             // if multi check
                                             $cf_saved_val_array = explode(", ", $t_field->field_value);
                                             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                            $cf_details_var2 = "details_" . config('smartend.default_language');
+                                            $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                             if ($customField->$cf_details_var != "") {
                                                 $cf_details = $customField->$cf_details_var;
                                             } else {

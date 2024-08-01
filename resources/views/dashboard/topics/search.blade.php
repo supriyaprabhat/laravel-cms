@@ -18,7 +18,7 @@
                                 <option value="">{{ __('backend.category') }} ( {{ __('backend.all') }} )
                                 <?php
                                 $title_var = "title_" . @Helper::currentLanguage()->code;
-                                $title_var2 = "title_" . config('smartend.default_language');
+                                $title_var2 = "title_" . config('spreinvents.default_language');
 
                                 $t_arrow = "&raquo;";
                                 ?>
@@ -142,7 +142,7 @@
                                         <option value="">- - {!!  $cf_title !!} - -</option>
                                         <?php
                                         $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                                        $cf_details_var2 = "details_" . config('smartend.default_language');
+                                        $cf_details_var2 = "details_" . config('spreinvents.default_language');
                                         if ($customField->$cf_details_var != "") {
                                             $cf_details = $customField->$cf_details_var;
                                         } else {

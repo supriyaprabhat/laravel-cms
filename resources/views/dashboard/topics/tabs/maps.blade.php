@@ -316,7 +316,7 @@
                                         <tbody>
                                         <?php
                                         $title_var = "title_" . @Helper::currentLanguage()->code;
-                                        $title_var2 = "title_" . config('smartend.default_language');
+                                        $title_var2 = "title_" . config('spreinvents.default_language');
                                         ?>
                                         @foreach($Topic->maps as $map)
                                             <?php
@@ -494,7 +494,7 @@
     </div>
     @push("after-scripts")
         <script type="text/javascript"
-                src="//maps.google.com/maps/api/js?key={{ config('smartend.google_maps_key') }}&language={{@Helper::currentLanguage()->code}}&callback=Function.prototype"></script>
+                src="//maps.google.com/maps/api/js?key={{ config('spreinvents.google_maps_key') }}&language={{@Helper::currentLanguage()->code}}&callback=Function.prototype"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 // var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';
@@ -527,7 +527,7 @@
 
                     <?php
                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                    $title_var2 = "title_" . config('smartend.default_language');
+                    $title_var2 = "title_" . config('spreinvents.default_language');
                     if(count($Topic->maps) > 0){
                     foreach($Topic->maps as $map){
                     if ($map->$title_var != "") {

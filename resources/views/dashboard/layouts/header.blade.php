@@ -135,7 +135,7 @@
                                 $clr_ary = array("info", "danger", "success", "accent",);
                                 $ik = 0;
                                 $mnu_title_var = "title_" . @Helper::currentLanguage()->code;
-                                $mnu_title_var2 = "title_" . config('smartend.default_language');
+                                $mnu_title_var2 = "title_" . config('spreinvents.default_language');
                                 ?>
                                 @if(@Auth::user()->permissionsGroup->add_status)
                                     @foreach($GeneralWebmasterSections as $headerWebmasterSection)

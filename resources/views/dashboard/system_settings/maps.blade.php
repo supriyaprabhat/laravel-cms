@@ -9,14 +9,14 @@
             <div class="radio">
                 <div>
                     <label class="ui-check ui-check-md">
-                        {!! Form::radio('google_maps_status','0',(config('smartend.google_maps_key') !="") ? false : true , array('id' => 'google_maps_status2','class'=>'has-value')) !!}
+                        {!! Form::radio('google_maps_status','0',(config('spreinvents.google_maps_key') !="") ? false : true , array('id' => 'google_maps_status2','class'=>'has-value')) !!}
                         <i class="dark-white"></i>
                         {{ __('backend.notActive') }}
                     </label>
                 </div>
                 <div style="margin-top: 5px;">
                     <label class="ui-check ui-check-md">
-                        {!! Form::radio('google_maps_status','1',(config('smartend.google_maps_key') !="") ? true : false , array('id' => 'google_maps_status1','class'=>'has-value')) !!}
+                        {!! Form::radio('google_maps_status','1',(config('spreinvents.google_maps_key') !="") ? true : false , array('id' => 'google_maps_status1','class'=>'has-value')) !!}
                         <i class="dark-white"></i>
                         {{ __('backend.active') }}
                     </label>
@@ -25,11 +25,11 @@
         </div>
 
         <div
-            id="google_maps_div" {!!  ( config('smartend.google_maps_key') =="") ? "style='display:none'":"" !!}>
+            id="google_maps_div" {!!  ( config('spreinvents.google_maps_key') =="") ? "style='display:none'":"" !!}>
 
             <div class="form-group">
                 <label>{!!  __('backend.googleMapsKey') !!}</label>
-                {!! Form::text('google_maps_key',config('smartend.google_maps_key'), array('placeholder' => '','class' => 'form-control','id' => 'google_maps_key', 'dir'=>'ltr')) !!}
+                {!! Form::text('google_maps_key',config('spreinvents.google_maps_key'), array('placeholder' => '','class' => 'form-control','id' => 'google_maps_key', 'dir'=>'ltr')) !!}
             </div>
 
         </div>

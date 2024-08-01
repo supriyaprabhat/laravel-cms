@@ -54,7 +54,7 @@
                         {!! Form::textarea('comment_message','', array('placeholder' => __('frontend.comment'),'class' => 'form-control','id'=>'comment_message','rows'=>'5', 'required'=> '')) !!}
                     </div>
 
-                    @if(config('smartend.nocaptcha_status'))
+                    @if(config('spreinvents.nocaptcha_status'))
                         <div class="form-group mb-3">
                             {!! NoCaptcha::renderJs(@Helper::currentLanguage()->code) !!}
                             {!! NoCaptcha::display() !!}

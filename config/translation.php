@@ -56,7 +56,7 @@ return [
     | Define the URL used to access the language management too.
     |
     */
-    'ui_url' => config('smartend.backend_path') . '/webmaster/translations',
+    'ui_url' => config('spreinvents.backend_path') . '/webmaster/translations',
 
     /*
     |--------------------------------------------------------------------------

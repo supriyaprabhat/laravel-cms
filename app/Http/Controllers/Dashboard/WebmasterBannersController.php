@@ -52,9 +52,9 @@ class WebmasterBannersController extends Controller
 
         if (@Auth::user()->permissionsGroup->view_status) {
             $WebmasterBanners = WebmasterBanner::where('created_by', '=', Auth::user()->id)->orderby('row_no',
-                'asc')->paginate(config('smartend.backend_pagination'));
+                'asc')->paginate(config('spreinvents.backend_pagination'));
         } else {
-            $WebmasterBanners = WebmasterBanner::orderby('row_no', 'asc')->paginate(config('smartend.backend_pagination'));
+            $WebmasterBanners = WebmasterBanner::orderby('row_no', 'asc')->paginate(config('spreinvents.backend_pagination'));
         }
         return view("dashboard.banners.banners_settings.list", compact("WebmasterBanners", "GeneralWebmasterSections"));
     }

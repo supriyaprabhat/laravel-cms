@@ -558,13 +558,13 @@
                 <label>{{ __('backend.dateFormat') }} : </label>
                 <select name="date_format" class="form-control select2 select2-hidden-accessible" ui-jp="select2"
                         ui-options="{theme: 'bootstrap'}">
-                    <option value="Y-m-d" {{ (config('smartend.date_format')=="Y-m-d")?"selected":"" }}>Y-m-d</option>
-                    <option value="d-m-Y" {{ (config('smartend.date_format')=="d-m-Y")?"selected":"" }}>d-m-Y</option>
-                    <option value="m-d-Y" {{ (config('smartend.date_format')=="m-d-Y")?"selected":"" }}>m-d-Y</option>
-                    <option value="d/m/Y" {{ (config('smartend.date_format')=="d/m/Y")?"selected":"" }}>d/m/Y</option>
-                    <option value="m/d/Y" {{ (config('smartend.date_format')=="m/d/Y")?"selected":"" }}>m/d/Y</option>
-                    <option value="d.m.Y" {{ (config('smartend.date_format')=="d.m.Y")?"selected":"" }}>d.m.Y</option>
-                    <option value="m.d.Y" {{ (config('smartend.date_format')=="m.d.Y")?"selected":"" }}>m.d.Y</option>
+                    <option value="Y-m-d" {{ (config('spreinvents.date_format')=="Y-m-d")?"selected":"" }}>Y-m-d</option>
+                    <option value="d-m-Y" {{ (config('spreinvents.date_format')=="d-m-Y")?"selected":"" }}>d-m-Y</option>
+                    <option value="m-d-Y" {{ (config('spreinvents.date_format')=="m-d-Y")?"selected":"" }}>m-d-Y</option>
+                    <option value="d/m/Y" {{ (config('spreinvents.date_format')=="d/m/Y")?"selected":"" }}>d/m/Y</option>
+                    <option value="m/d/Y" {{ (config('spreinvents.date_format')=="m/d/Y")?"selected":"" }}>m/d/Y</option>
+                    <option value="d.m.Y" {{ (config('spreinvents.date_format')=="d.m.Y")?"selected":"" }}>d.m.Y</option>
+                    <option value="m.d.Y" {{ (config('spreinvents.date_format')=="m.d.Y")?"selected":"" }}>m.d.Y</option>
 
                 </select>
             </div>
@@ -573,7 +573,7 @@
                 <select name="first_day_of_week" class="form-control select2 select2-hidden-accessible" ui-jp="select2"
                         ui-options="{theme: 'bootstrap'}">
                     @foreach( __('backend.daysName') as $key=>$dayName)
-                    <option value="{{ $key }}" {{ (config('smartend.first_day_of_week')==$key)?"selected":"" }}>{{ $dayName }}</option>
+                    <option value="{{ $key }}" {{ (config('spreinvents.first_day_of_week')==$key)?"selected":"" }}>{{ $dayName }}</option>
                     @endforeach
 
                 </select>
@@ -625,7 +625,7 @@
                                         </small>
                                     </button>
                                     <a class="btn btn-sm info " target="_blank"
-                                       href="{{ url(config('smartend.backend_path').'/webmaster/translations/'.$Language->code.'/translations') }}">
+                                       href="{{ url(config('spreinvents.backend_path').'/webmaster/translations/'.$Language->code.'/translations') }}">
                                         <i class="material-icons">&#xe8e2;</i> {{ __('backend.updateTranslation') }}
                                     </a>
                                 @endif

@@ -54,38 +54,38 @@ class ContactsController extends Controller
                 //List of group contacts
                 $Contacts = Contact::where('created_by', '=', Auth::user()->id)->where('group_id', '=',
                     $group_id)->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "wait") {
                 //List waiting activation Contacts
                 $Contacts = Contact::where('created_by', '=', Auth::user()->id)->where('status', '=',
                     '0')->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "blocked") {
                 //List waiting activation Contacts
                 $Contacts = Contact::where('created_by', '=', Auth::user()->id)->where('status', '=',
                     '2')->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 //List of all contacts
                 $Contacts = Contact::where('created_by', '=', Auth::user()->id)->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             }
         } else {
             if ($group_id > 0) {
                 //List of group contacts
                 $Contacts = Contact::where('group_id', '=', (int)$group_id)->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "wait") {
                 //List waiting activation Contacts
                 $Contacts = Contact::where('status', '=', '0')->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             } elseif ($group_id == "blocked") {
                 //List waiting activation Contacts
                 $Contacts = Contact::where('status', '=', '2')->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 //List of all contacts
-                $Contacts = Contact::orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                $Contacts = Contact::orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             }
         }
 
@@ -147,11 +147,11 @@ class ContactsController extends Controller
                     ->orwhere('notes', 'like', '%' . $request->q . '%')
                     ->orwhere('phone', '=', $request->q)
                     ->orwhere('email', '=', $request->q)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 //List of all contacts
                 $Contacts = Contact::where('created_by', '=', Auth::user()->id)->orderby('id',
-                    'desc')->paginate(config('smartend.backend_pagination'));
+                    'desc')->paginate(config('spreinvents.backend_pagination'));
             }
         } else {
             if ($request->q != "") {
@@ -163,10 +163,10 @@ class ContactsController extends Controller
                     ->orwhere('notes', 'like', '%' . $request->q . '%')
                     ->orwhere('phone', '=', $request->q)
                     ->orwhere('email', '=', $request->q)
-                    ->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    ->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             } else {
                 //List of all contacts
-                $Contacts = Contact::orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                $Contacts = Contact::orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             }
         }
         if (@Auth::user()->permissionsGroup->view_status) {

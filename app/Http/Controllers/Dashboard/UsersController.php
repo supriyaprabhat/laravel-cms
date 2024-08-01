@@ -39,10 +39,10 @@ class UsersController extends Controller
 
         if (@Auth::user()->permissionsGroup->view_status) {
             $Users = User::where('created_by', '=', Auth::user()->id)->orwhere('id', '=', Auth::user()->id)->orderby('id',
-                'asc')->paginate(config('smartend.backend_pagination'));
+                'asc')->paginate(config('spreinvents.backend_pagination'));
             $Permissions = Permissions::where('created_by', '=', Auth::user()->id)->orderby('id', 'asc')->get();
         } else {
-            $Users = User::orderby('id', 'asc')->paginate(config('smartend.backend_pagination'));
+            $Users = User::orderby('id', 'asc')->paginate(config('spreinvents.backend_pagination'));
             $Permissions = Permissions::orderby('id', 'asc')->get();
         }
         return view("dashboard.users.list", compact("Users", "Permissions", "GeneralWebmasterSections"));

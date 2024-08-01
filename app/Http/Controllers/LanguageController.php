@@ -27,7 +27,7 @@ class LanguageController extends Controller
             $prev_url = url()->previous();
             $Languages = Language::all();
             foreach ($Languages as $Language) {
-                if ($lang == config('smartend.default_language') && config('smartend.default_language') != "") {
+                if ($lang == config('spreinvents.default_language') && config('spreinvents.default_language') != "") {
                     $prev_url = str_replace("/" . $Language->code . "/", "/", $prev_url);
                 } else {
                     $prev_url = str_replace("/" . $Language->code . "/", "/" . $lang . "/", $prev_url);

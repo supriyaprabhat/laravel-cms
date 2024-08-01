@@ -12,7 +12,7 @@
                     <option value="0">- - {!!  __('backend.none') !!} - -</option>
                     <?php
                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                    $title_var2 = "title_" . config('smartend.default_language');
+                    $title_var2 = "title_" . config('spreinvents.default_language');
                     ?>
                     @foreach ($ParentMenus as $ParentMenu)
                         <?php
@@ -33,7 +33,7 @@
                     <option value="0">- - {!!  __('backend.none') !!} - -</option>
                     <?php
                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                    $title_var2 = "title_" . config('smartend.default_language');
+                    $title_var2 = "title_" . config('spreinvents.default_language');
                     ?>
                     @foreach ($ParentMenus as $ParentMenu)
                         <?php
@@ -131,9 +131,9 @@
                 <select name="front_topics_order" id="front_topics_order"
                         class="form-control c-select">
                     <option
-                        value="asc" {{ (config('smartend.frontend_topics_order') == "asc") ? "selected='selected'":""  }}>{!!  __('backend.topicsOrderInFrontAsc') !!}</option>
+                        value="asc" {{ (config('spreinvents.frontend_topics_order') == "asc") ? "selected='selected'":""  }}>{!!  __('backend.topicsOrderInFrontAsc') !!}</option>
                     <option
-                        value="desc" {{ (config('smartend.frontend_topics_order') == "desc") ? "selected='selected'":""  }}>{!!  __('backend.topicsOrderInFrontDesc') !!}</option>
+                        value="desc" {{ (config('spreinvents.frontend_topics_order') == "desc") ? "selected='selected'":""  }}>{!!  __('backend.topicsOrderInFrontDesc') !!}</option>
                 </select>
             </div>
 
@@ -329,7 +329,7 @@
                     <option value="0">- - {!!  __('backend.none') !!} - -</option>
                     <?php
                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                    $title_var2 = "title_" . config('smartend.default_language');
+                    $title_var2 = "title_" . config('spreinvents.default_language');
                     ?>
                     @foreach ($SitePages as $SitePage)
                         <?php

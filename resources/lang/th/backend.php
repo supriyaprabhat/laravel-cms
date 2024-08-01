@@ -682,7 +682,7 @@ return array(
     'noResults' => 'There is no results, please try again',
     'systemUpdate' => 'System Update',
     'systemLicenseAndUpdate' => 'System license & update',
-    'activateLicenceForUpdate' => 'You need to activate your Smartend use license first to receive updates',
+    'activateLicenceForUpdate' => 'You need to activate your Spreinvents use license first to receive updates',
     'domainName' => 'Domain name',
     'purchaseCode' => 'Purchase code',
     'purchaseCodeIsRequired' => 'Purchase code is required',

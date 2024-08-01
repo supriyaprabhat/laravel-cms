@@ -10,14 +10,14 @@
             <div class="radio">
                 <div>
                     <label class="ui-check ui-check-md">
-                        {!! Form::radio('debug_mode_status','0',(config('smartend.app_debug') !="") ? false : true , array('id' => 'debug_mode_status0','class'=>'has-value')) !!}
+                        {!! Form::radio('debug_mode_status','0',(config('spreinvents.app_debug') !="") ? false : true , array('id' => 'debug_mode_status0','class'=>'has-value')) !!}
                         <i class="dark-white"></i>
                         {{ __('backend.notActive') }}
                     </label>
                 </div>
                 <div style="margin-top: 5px;">
                     <label class="ui-check ui-check-md">
-                        {!! Form::radio('debug_mode_status','1',(config('smartend.app_debug') !="") ? true : false , array('id' => 'debug_mode_status1','class'=>'has-value')) !!}
+                        {!! Form::radio('debug_mode_status','1',(config('spreinvents.app_debug') !="") ? true : false , array('id' => 'debug_mode_status1','class'=>'has-value')) !!}
                         <i class="dark-white"></i>
                         {{ __('backend.active') }}
                     </label>

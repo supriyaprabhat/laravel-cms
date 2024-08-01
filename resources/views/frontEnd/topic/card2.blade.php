@@ -1,11 +1,11 @@
 @if(!empty($Post))
     <?php
     $post_title_var = "title_" . @Helper::currentLanguage()->code;
-    $post_title_var2 = "title_" . config('smartend.default_language');
+    $post_title_var2 = "title_" . config('spreinvents.default_language');
     $details_var = "details_" . @Helper::currentLanguage()->code;
-    $details_var2 = "details_" . config('smartend.default_language');
+    $details_var2 = "details_" . config('spreinvents.default_language');
     $slug_var = "seo_url_slug_" . @Helper::currentLanguage()->code;
-    $slug_var2 = "seo_url_slug_" . config('smartend.default_language');
+    $slug_var2 = "seo_url_slug_" . config('spreinvents.default_language');
 
     if ($Post->$post_title_var != "") {
         $post_title = $Post->$post_title_var;

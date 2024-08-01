@@ -177,7 +177,7 @@ class Helper
 
     static function SaveVisitorInfo($PageTitle)
     {
-        if (config('smartend.geoip_status')) {
+        if (config('spreinvents.geoip_status')) {
             $visitor_ip = $_SERVER['REMOTE_ADDR'];
             $current_page_full_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             $page_load_time = round((microtime(true) - LARAVEL_START), 8);
@@ -586,7 +586,7 @@ class Helper
             return $item->code == $locale;
         });
         if (empty($Language)) {
-            $Language = Language::where("code", config('smartend.default_language'))->first();
+            $Language = Language::where("code", config('spreinvents.default_language'))->first();
         }
         return $Language;
     }
@@ -634,7 +634,7 @@ class Helper
         } elseif (@$page_type == "404") {
             $lang_url = route("NotFound", ['lang' => $lang_code]);
         } elseif (@$page_type == "home") {
-            if ($lang_code != config('smartend.default_language')) {
+            if ($lang_code != config('spreinvents.default_language')) {
                 $lang_url = URL::to($lang_code);
             } else {
                 $lang_url = URL::to("/");
@@ -656,7 +656,7 @@ class Helper
         } elseif (@$page_type == "404") {
             $canonical_url = route("NotFound");
         } elseif (@$page_type == "home") {
-            if ($lang_code != config('smartend.default_language')) {
+            if ($lang_code != config('spreinvents.default_language')) {
                 $canonical_url = URL::to($lang_code);
             } else {
                 $canonical_url = URL::to("/");
@@ -668,7 +668,7 @@ class Helper
     static function homeURL()
     {
         $lang = @Helper::currentLanguage()->code;
-        if ($lang == config('smartend.default_language')) {
+        if ($lang == config('spreinvents.default_language')) {
             return route("frontendRoute");
         }
         return route("frontendRoute", ["part1" => $lang]);
@@ -697,12 +697,12 @@ class Helper
                 if ($WebmasterSection->{'seo_url_slug_' . $lang} != "") {
                     $slug = $WebmasterSection->{'seo_url_slug_' . $lang};
                 } else {
-                    $slug = $WebmasterSection->{'seo_url_slug_' . config('smartend.default_language')};
+                    $slug = $WebmasterSection->{'seo_url_slug_' . config('spreinvents.default_language')};
                 }
                 if ($slug == "") {
                     $slug = Str::slug($WebmasterSection->$title_var, '-');
                 }
-                if ($lang != config('smartend.default_language')) {
+                if ($lang != config('spreinvents.default_language')) {
                     $section_url = url($lang . "/" . $slug);
                 } else {
                     $section_url = url($slug);
@@ -729,7 +729,7 @@ class Helper
                 if ($Category->{'seo_url_slug_' . $lang} != "") {
                     $cat_slug = $Category->{'seo_url_slug_' . $lang};
                 } else {
-                    $cat_slug = $Category->{'seo_url_slug_' . config('smartend.default_language')};
+                    $cat_slug = $Category->{'seo_url_slug_' . config('spreinvents.default_language')};
                 }
                 if ($cat_slug == "") {
                     $cat_slug = Str::slug($Category->$title_var, '-');
@@ -741,7 +741,7 @@ class Helper
                     if ($WebmasterSection->{'seo_url_slug_' . $lang} != "") {
                         $WebmasterSection_slug = $WebmasterSection->{'seo_url_slug_' . $lang};
                     } else {
-                        $WebmasterSection_slug = $WebmasterSection->{'seo_url_slug_' . config('smartend.default_language')};
+                        $WebmasterSection_slug = $WebmasterSection->{'seo_url_slug_' . config('spreinvents.default_language')};
                     }
                     if ($WebmasterSection_slug == "") {
                         $WebmasterSection_slug = Str::slug($WebmasterSection->$title_var, '-');
@@ -753,7 +753,7 @@ class Helper
                     if ($fatherSection2->{'seo_url_slug_' . $lang} != "") {
                         $cat2_slug = $fatherSection2->{'seo_url_slug_' . $lang};
                     } else {
-                        $cat2_slug = $fatherSection2->{'seo_url_slug_' . config('smartend.default_language')};
+                        $cat2_slug = $fatherSection2->{'seo_url_slug_' . config('spreinvents.default_language')};
                     }
                     if ($cat2_slug == "") {
                         $cat2_slug = Str::slug($fatherSection2->$title_var, '-');
@@ -765,19 +765,19 @@ class Helper
                         if ($fatherSection1->{'seo_url_slug_' . $lang} != "") {
                             $cat1_slug = $fatherSection1->{'seo_url_slug_' . $lang};
                         } else {
-                            $cat1_slug = $fatherSection1->{'seo_url_slug_' . config('smartend.default_language')};
+                            $cat1_slug = $fatherSection1->{'seo_url_slug_' . config('spreinvents.default_language')};
                         }
                         if ($cat1_slug == "") {
                             $cat1_slug = Str::slug($fatherSection1->$title_var, '-');
                         }
-                        if ($lang != config('smartend.default_language')) {
+                        if ($lang != config('spreinvents.default_language')) {
                             $category_url = url($lang . "/" . $WebmasterSection_slug . "/" . $cat1_slug . "/" . $cat2_slug . "/" . $cat_slug);
                         } else {
                             $category_url = url($WebmasterSection_slug . "/" . $cat1_slug . "/" . $cat2_slug . "/" . $cat_slug);
                         }
                     } else {
                         // is level 2
-                        if ($lang != config('smartend.default_language')) {
+                        if ($lang != config('spreinvents.default_language')) {
                             $category_url = url($lang . "/" . $WebmasterSection_slug . "/" . $cat2_slug . "/" . $cat_slug);
                         } else {
                             $category_url = url($WebmasterSection_slug . "/" . $cat2_slug . "/" . $cat_slug);
@@ -785,7 +785,7 @@ class Helper
                     }
                 } else {
                     // is level 1
-                    if ($lang != config('smartend.default_language')) {
+                    if ($lang != config('spreinvents.default_language')) {
                         $category_url = url($lang . "/" . $WebmasterSection_slug . "/" . $cat_slug);
                     } else {
                         $category_url = url($WebmasterSection_slug . "/" . $cat_slug);
@@ -814,13 +814,13 @@ class Helper
                 if ($Topic->{'seo_url_slug_' . $lang} != "") {
                     $topic_slug = $Topic->{'seo_url_slug_' . $lang};
                 } else {
-                    $topic_slug = $Topic->{'seo_url_slug_' . config('smartend.default_language')};
+                    $topic_slug = $Topic->{'seo_url_slug_' . config('spreinvents.default_language')};
                 }
                 if ($topic_slug == "") {
                     $topic_slug = Str::slug($Topic->$title_var, '-');
                 }
                 if ($Topic->webmaster_id == 1) {
-                    if ($lang != config('smartend.default_language')) {
+                    if ($lang != config('spreinvents.default_language')) {
                         $topic_url = url($lang . "/" . $topic_slug);
                     } else {
                         $topic_url = url($topic_slug);
@@ -834,7 +834,7 @@ class Helper
                     if ($WebmasterSection->{'seo_url_slug_' . $lang} != "") {
                         $WebmasterSection_slug = $WebmasterSection->{'seo_url_slug_' . $lang};
                     } else {
-                        $WebmasterSection_slug = $WebmasterSection->{'seo_url_slug_' . config('smartend.default_language')};
+                        $WebmasterSection_slug = $WebmasterSection->{'seo_url_slug_' . config('spreinvents.default_language')};
                     }
                     if ($WebmasterSection_slug == "") {
                         $WebmasterSection_slug = Str::slug($WebmasterSection->$title_var, '-');
@@ -851,7 +851,7 @@ class Helper
                     if ($Category->{'seo_url_slug_' . $lang} != "") {
                         $cat_slug = $Category->{'seo_url_slug_' . $lang};
                     } else {
-                        $cat_slug = $Category->{'seo_url_slug_' . config('smartend.default_language')};
+                        $cat_slug = $Category->{'seo_url_slug_' . config('spreinvents.default_language')};
                     }
                     if ($cat_slug == "") {
                         $cat_slug = Str::slug($Category->$title_var, '-');
@@ -862,7 +862,7 @@ class Helper
                         if ($fatherSection2->{'seo_url_slug_' . $lang} != "") {
                             $cat2_slug = $fatherSection2->{'seo_url_slug_' . $lang};
                         } else {
-                            $cat2_slug = $fatherSection2->{'seo_url_slug_' . config('smartend.default_language')};
+                            $cat2_slug = $fatherSection2->{'seo_url_slug_' . config('spreinvents.default_language')};
                         }
                         if ($cat2_slug == "") {
                             $cat2_slug = Str::slug($fatherSection2->$title_var, '-');
@@ -874,19 +874,19 @@ class Helper
                             if ($fatherSection1->{'seo_url_slug_' . $lang} != "") {
                                 $cat1_slug = $fatherSection1->{'seo_url_slug_' . $lang};
                             } else {
-                                $cat1_slug = $fatherSection1->{'seo_url_slug_' . config('smartend.default_language')};
+                                $cat1_slug = $fatherSection1->{'seo_url_slug_' . config('spreinvents.default_language')};
                             }
                             if ($cat1_slug == "") {
                                 $cat1_slug = Str::slug($fatherSection1->$title_var, '-');
                             }
-                            if ($lang != config('smartend.default_language')) {
+                            if ($lang != config('spreinvents.default_language')) {
                                 $topic_url = url($lang . "/" . $WebmasterSection_slug . "/" . $cat1_slug . "/" . $cat2_slug . "/" . $cat_slug . "/" . $topic_slug);
                             } else {
                                 $topic_url = url($WebmasterSection_slug . "/" . $cat1_slug . "/" . $cat2_slug . "/" . $cat_slug . "/" . $topic_slug);
                             }
                         } else {
                             // is level 2
-                            if ($lang != config('smartend.default_language')) {
+                            if ($lang != config('spreinvents.default_language')) {
                                 $topic_url = url($lang . "/" . $WebmasterSection_slug . "/" . $cat2_slug . "/" . $cat_slug . "/" . $topic_slug);
                             } else {
                                 $topic_url = url($WebmasterSection_slug . "/" . $cat2_slug . "/" . $cat_slug . "/" . $topic_slug);
@@ -894,14 +894,14 @@ class Helper
                         }
                     } else {
                         // is level 1
-                        if ($lang != config('smartend.default_language')) {
+                        if ($lang != config('spreinvents.default_language')) {
                             $topic_url = url($lang . "/" . $WebmasterSection_slug . "/" . $cat_slug . "/" . $topic_slug);
                         } else {
                             $topic_url = url($WebmasterSection_slug . "/" . $cat_slug . "/" . $topic_slug);
                         }
                     }
                 } else {
-                    if ($lang != config('smartend.default_language')) {
+                    if ($lang != config('spreinvents.default_language')) {
                         $topic_url = url($lang . "/" . $WebmasterSection_slug . "/" . $topic_slug);
                     } else {
                         $topic_url = url($WebmasterSection_slug . "/" . $topic_slug);
@@ -941,7 +941,7 @@ class Helper
     static function formatDate($date = "")
     {
         if ($date != "") {
-            $format = config('smartend.date_format');
+            $format = config('spreinvents.date_format');
             return date($format, strtotime($date));
         }
         return "";
@@ -951,7 +951,7 @@ class Helper
     {
         if ($date != "") {
             try {
-                $format = config('smartend.date_format');
+                $format = config('spreinvents.date_format');
                 if ($withTime) {
                     return Carbon::createFromFormat($format . " h:i A", $date)->format('Y-m-d H:i:s');
                 } else {
@@ -966,7 +966,7 @@ class Helper
 
     static function jsDateFormat()
     {
-        $format = config('smartend.date_format');
+        $format = config('spreinvents.date_format');
         $format = str_replace("Y", "YYYY", $format);
         $format = str_replace("m", "MM", $format);
         $format = str_replace("d", "DD", $format);
@@ -1007,7 +1007,7 @@ class Helper
             if ($random) {
                 $Topics = $Topics->inRandomOrder();
             } else {
-                $Topics = $Topics->orderby('date', config('smartend.frontend_topics_order'))->orderby('id', config('smartend.frontend_topics_order'));
+                $Topics = $Topics->orderby('date', config('spreinvents.frontend_topics_order'))->orderby('id', config('spreinvents.frontend_topics_order'));
             }
             if ($limit > 0) {
                 $Topics = $Topics->limit($limit);
@@ -1092,11 +1092,11 @@ class Helper
 
     static function news_letter_subscribe($email, $first_name = "", $last_name = ""): int
     {
-        $newsletter_status = config('smartend.newsletter_status');
-        $newsletter_provider = config('smartend.newsletter_provider');
-        $newsletter_api_key = config('smartend.newsletter_api_key');
-        $newsletter_endpoint = config('smartend.newsletter_endpoint');
-        $newsletter_list_id = config('smartend.newsletter_list_id');
+        $newsletter_status = config('spreinvents.newsletter_status');
+        $newsletter_provider = config('spreinvents.newsletter_provider');
+        $newsletter_api_key = config('spreinvents.newsletter_api_key');
+        $newsletter_endpoint = config('spreinvents.newsletter_endpoint');
+        $newsletter_list_id = config('spreinvents.newsletter_list_id');
 
         if ($newsletter_status && $newsletter_provider != "" && $newsletter_api_key != "" && $newsletter_list_id != "") {
             try {
@@ -1166,7 +1166,7 @@ class Helper
                 ];
             }
             $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-            $cf_title_var2 = "title_" . config('smartend.default_language');
+            $cf_title_var2 = "title_" . config('spreinvents.default_language');
             foreach ($WebmasterSection->customFields->whereNotIn("type",[99]) as $customField) {
                 $view_permission_groups = [];
                 if ($customField->view_permission_groups != "") {

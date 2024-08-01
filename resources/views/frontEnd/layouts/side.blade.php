@@ -12,9 +12,9 @@
         @if(count($Categories)>0)
             <?php
             $title_var = "title_" . @Helper::currentLanguage()->code;
-            $title_var2 = "title_" . config('smartend.default_language');
+            $title_var2 = "title_" . config('spreinvents.default_language');
             $slug_var = "seo_url_slug_" . @Helper::currentLanguage()->code;
-            $slug_var2 = "seo_url_slug_" . config('smartend.default_language');
+            $slug_var2 = "seo_url_slug_" . config('spreinvents.default_language');
             ?>
             <div class="widget categories-widget sidebar-list mb-4">
                 <div class="widget-title categories-title">

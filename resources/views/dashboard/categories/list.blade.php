@@ -1,6 +1,6 @@
 <?php
 $title_var = "title_" . @Helper::currentLanguage()->code;
-$title_var2 = "title_" . config('smartend.default_language');
+$title_var2 = "title_" . config('spreinvents.default_language');
 if ($WebmasterSection->$title_var != "") {
     $WebmasterSectionTitle = $WebmasterSection->$title_var;
 } else {
@@ -86,7 +86,7 @@ if ($WebmasterSection->$title_var != "") {
                             <tbody>
                             <?php
                             $title_var = "title_" . @Helper::currentLanguage()->code;
-                            $title_var2 = "title_" . config('smartend.default_language');
+                            $title_var2 = "title_" . config('spreinvents.default_language');
                             $x = 0;
                             ?>
                             @foreach($Sections as $Section)

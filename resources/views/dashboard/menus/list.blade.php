@@ -68,7 +68,7 @@
                                 <ul class="list p-b-1" style="list-style: none;">
                                     <?php
                                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                                    $title_var2 = "title_" . config('smartend.default_language');
+                                    $title_var2 = "title_" . config('spreinvents.default_language');
                                     ?>
                                     @foreach($ParentMenus as $ParentMenu)
                                         <?php
@@ -230,7 +230,7 @@
                                     <tbody>
                                     <?php
                                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                                    $title_var2 = "title_" . config('smartend.default_language');
+                                    $title_var2 = "title_" . config('spreinvents.default_language');
                                     ?>
                                     @foreach($Menus as $Menu)
                                         <?php

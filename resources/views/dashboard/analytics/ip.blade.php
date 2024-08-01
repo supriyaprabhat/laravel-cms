@@ -204,7 +204,7 @@
     if ($visitor_loc_0 != "unknown" && $visitor_loc_1 != "unknown") {
     ?>
     <script type="text/javascript"
-            src="//maps.google.com/maps/api/js?key={{ config('smartend.google_maps_key') }}&language={{ @Helper::currentLanguage()->code }}&callback=Function.prototype"></script>
+            src="//maps.google.com/maps/api/js?key={{ config('spreinvents.google_maps_key') }}&language={{ @Helper::currentLanguage()->code }}&callback=Function.prototype"></script>
     <script type="text/javascript">
         function initialize() {
             var latlng = new google.maps.LatLng(<?php echo $visitor_loc_0; ?>, <?php echo $visitor_loc_1; ?>);

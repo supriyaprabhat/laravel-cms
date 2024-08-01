@@ -9,35 +9,35 @@
             <div class="radio">
                 <div>
                     <label class="ui-check ui-check-md">
-                        {!! Form::radio('geoip_status','0',(config('smartend.geoip_status') ==0) , array('id' => 'sms_status2','class'=>'has-value')) !!}
+                        {!! Form::radio('geoip_status','0',(config('spreinvents.geoip_status') ==0) , array('id' => 'sms_status2','class'=>'has-value')) !!}
                         <i class="dark-white"></i>
                         {{ __('backend.notActive') }}
                     </label>
                 </div>
                 <div style="margin-top: 5px;">
                     <label class="ui-check ui-check-md">
-                        {!! Form::radio('geoip_status','1',(config('smartend.geoip_status') ==1), array('id' => 'sms_status1','class'=>'has-value')) !!}
+                        {!! Form::radio('geoip_status','1',(config('spreinvents.geoip_status') ==1), array('id' => 'sms_status1','class'=>'has-value')) !!}
                         <i class="dark-white"></i>
                         {{ __('backend.active') }}
                     </label>
                 </div>
             </div>
         </div>
-        <div id="geoip_service_info" class="{{ (config('smartend.geoip_status') ==1)?"":"displayNone" }}">
+        <div id="geoip_service_info" class="{{ (config('spreinvents.geoip_status') ==1)?"":"displayNone" }}">
             <div class="form-group">
                 <label>{!!  __('backend.analyticsService') !!}</label>
                 <select name="geoip_service" class="form-control c-select">
-                    <option value="ipapi" {{ (config('smartend.geoip_service')== "ipapi") ? "selected='selected'":""  }}>
+                    <option value="ipapi" {{ (config('spreinvents.geoip_service')== "ipapi") ? "selected='selected'":""  }}>
                         {!!  __('backend.usingService') !!} : ip-api.com ( Default )
                     </option>
                     <option
-                        value="ipgeolocation" {{ (config('smartend.geoip_service')== "ipgeolocation") ? "selected='selected'":""  }}>
+                        value="ipgeolocation" {{ (config('spreinvents.geoip_service')== "ipgeolocation") ? "selected='selected'":""  }}>
                         {!!  __('backend.usingService') !!} : ipgeolocation.io
                     </option>
-                    <option value="ipfinder" {{ (config('smartend.geoip_service')== "ipfinder") ? "selected='selected'":""  }}>
+                    <option value="ipfinder" {{ (config('spreinvents.geoip_service')== "ipfinder") ? "selected='selected'":""  }}>
                         {!!  __('backend.usingService') !!} : ipfinder.io
                     </option>
-                    <option value="ipdata" {{ (config('smartend.geoip_service')== "ipdata") ? "selected='selected'":""  }}>
+                    <option value="ipdata" {{ (config('spreinvents.geoip_service')== "ipdata") ? "selected='selected'":""  }}>
                         {!!  __('backend.usingService') !!} : ipdata.co
                     </option>
                 </select>
@@ -45,7 +45,7 @@
 
             <div class="form-group">
                 <label>{!!  __('backend.analyticsApiKey') !!}</label>
-                {!! Form::text('geoip_service_key',config('smartend.geoip_service_key'), array('placeholder' => '','class' => 'form-control', 'dir'=>__('backLang.ltr'))) !!}
+                {!! Form::text('geoip_service_key',config('spreinvents.geoip_service_key'), array('placeholder' => '','class' => 'form-control', 'dir'=>__('backLang.ltr'))) !!}
             </div>
             <div class="form-group">
                 <label>{!!  __('backend.analyticsApiMsg') !!} :</label>

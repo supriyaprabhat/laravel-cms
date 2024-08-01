@@ -1,7 +1,7 @@
 <script type="text/javascript">
     var public_lang = "{{ @Helper::currentLanguage()->code }}";
     var public_folder_path = "{{ asset('') }}";
-    var first_day_of_week = "{{ config('smartend.first_day_of_week') }}";
+    var first_day_of_week = "{{ config('spreinvents.first_day_of_week') }}";
 
 </script>
 @stack('before-scripts')

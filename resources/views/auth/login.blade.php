@@ -15,7 +15,7 @@
                 <h5 class="text-muted m-b-0"><strong>{{ __('backend.signedInToControl') }}</strong></h5>
             </div>
             <div class="p-a-md">
-                <form name="form" method="POST" action="{{ url('/'.config('smartend.backend_path').'/login') }}"
+                <form name="form" method="POST" action="{{ url('/'.config('spreinvents.backend_path').'/login') }}"
                       onsubmit="document.getElementById('login_form_submit').disabled = true; return true;">
                     {{ csrf_field() }}
                     @if($errors ->any())
@@ -42,7 +42,7 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                     @endif
-                    @if(config('smartend.nocaptcha_status'))
+                    @if(config('spreinvents.nocaptcha_status'))
                         <div class="form-group">
                             {!! NoCaptcha::renderJs(@Helper::currentLanguage()->code) !!}
                             {!! NoCaptcha::display() !!}
@@ -57,46 +57,46 @@
                     <button type="submit" id="login_form_submit"
                             class="btn primary btn-block p-x-md m-b">{{ __('backend.signIn') }}</button>
                 </form>
-                @if(config('smartend.facebook_status') && config('smartend.facebook_id') && config('smartend.facebook_secret'))
+                @if(config('spreinvents.facebook_status') && config('spreinvents.facebook_id') && config('spreinvents.facebook_secret'))
                     <a href="{{ route('social.oauth', 'facebook') }}" class="btn btn-primary btn-block text-left">
                         <i class="fa fa-facebook"></i> {{ __('backend.loginWithFacebook') }}
                     </a>
                 @endif
-                @if(config('smartend.twitter_status') && config('smartend.twitter_id') && config('smartend.twitter_secret'))
+                @if(config('spreinvents.twitter_status') && config('spreinvents.twitter_id') && config('spreinvents.twitter_secret'))
                     <a href="{{ route('social.oauth', 'twitter') }}" class="btn btn-info btn-block text-left">
                         <i class="fa  fa-twitter"></i> {{ __('backend.loginWithTwitter') }}
                     </a>
                 @endif
-                @if(config('smartend.google_status') && config('smartend.google_id') && config('smartend.google_secret'))
+                @if(config('spreinvents.google_status') && config('spreinvents.google_id') && config('spreinvents.google_secret'))
                     <a href="{{ route('social.oauth', 'google') }}" class="btn danger btn-block text-left">
                         <i class="fa fa-google"></i> {{ __('backend.loginWithGoogle') }}
                     </a>
                 @endif
-                @if(config('smartend.linkedin_status') && config('smartend.linkedin_id') && config('smartend.linkedin_secret'))
+                @if(config('spreinvents.linkedin_status') && config('spreinvents.linkedin_id') && config('spreinvents.linkedin_secret'))
                     <a href="{{ route('social.oauth', 'linkedin') }}" class="btn btn-primary btn-block text-left">
                         <i class="fa fa-linkedin"></i> {{ __('backend.loginWithLinkedIn') }}
                     </a>
                 @endif
-                @if(config('smartend.github_status') && config('smartend.github_id') && config('smartend.github_secret'))
+                @if(config('spreinvents.github_status') && config('spreinvents.github_id') && config('spreinvents.github_secret'))
                     <a href="{{ route('social.oauth', 'github') }}" class="btn btn-default dark btn-block text-left">
                         <i class="fa fa-github"></i> {{ __('backend.loginWithGitHub') }}
                     </a>
                 @endif
-                @if(config('smartend.bitbucket_status') && config('smartend.bitbucket_id') && config('smartend.bitbucket_secret'))
+                @if(config('spreinvents.bitbucket_status') && config('spreinvents.bitbucket_id') && config('spreinvents.bitbucket_secret'))
                     <a href="{{ route('social.oauth', 'bitbucket') }}" class="btn primary btn-block text-left">
                         <i class="fa fa-bitbucket"></i> {{ __('backend.loginWithBitbucket') }}
                     </a>
                 @endif
 
                 @if(Helper::GeneralWebmasterSettings("register_status"))
-                    <a href="{{ url('/'.config('smartend.backend_path').'/register') }}"
+                    <a href="{{ url('/'.config('spreinvents.backend_path').'/register') }}"
                        class="btn info btn-block text-left">
                         <i class="fa fa-user-plus"></i> {{ __('backend.createNewAccount') }}
                     </a>
                 @endif
-                @if(config('smartend.mail_driver') != "" && config('smartend.mail_username') !="" && config('smartend.mail_password'))
+                @if(config('spreinvents.mail_driver') != "" && config('spreinvents.mail_username') !="" && config('spreinvents.mail_password'))
                     <div class="p-v-lg text-center">
-                        <div class="m-t"><a href="{{ url('/'.config('smartend.backend_path').'/password/reset') }}"
+                        <div class="m-t"><a href="{{ url('/'.config('spreinvents.backend_path').'/password/reset') }}"
                                             class="text-primary _600">{{ __('backend.forgotPassword') }}</a></div>
                     </div>
                 @endif

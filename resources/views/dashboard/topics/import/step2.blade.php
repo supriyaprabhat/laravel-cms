@@ -40,7 +40,7 @@
         </thead>
         <?php
         $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-        $cf_title_var2 = "title_" . config('smartend.default_language');
+        $cf_title_var2 = "title_" . config('spreinvents.default_language');
         function selectColumn($name, $ExcelColumns)
         {
             $select_excel_columns = "<select name=\"" . $name . "\" class=\"form-control c-select\">";
@@ -65,7 +65,7 @@
                             ui-options="{theme: 'bootstrap'}" required>
                         <?php
                         $title_var = "title_" . @Helper::currentLanguage()->code;
-                        $title_var2 = "title_" . config('smartend.default_language');
+                        $title_var2 = "title_" . config('spreinvents.default_language');
                         $t_arrow = "&raquo;";
                         ?>
                         @foreach ($fatherSections as $fatherSection)

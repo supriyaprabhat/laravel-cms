@@ -21,7 +21,7 @@
                                     </option>
                                     <?php
                                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                                    $title_var2 = "title_" . config('smartend.default_language');
+                                    $title_var2 = "title_" . config('spreinvents.default_language');
                                     ?>
                                     @foreach ($GeneralWebmasterSections as $WebmasterSection)
                                         <?php
@@ -115,7 +115,7 @@
                         <tbody>
                         <?php
                         $title_var = "title_" . @Helper::currentLanguage()->code;
-                        $title_var2 = "title_" . config('smartend.default_language');
+                        $title_var2 = "title_" . config('spreinvents.default_language');
                         ?>
                         @foreach($Topic->relatedTopics as $relatedTopic)
                             <?php
@@ -242,7 +242,7 @@
                 var fid = $(this).val();
                 $(document).ready(function () {
                     $.ajax({
-                        url: '<?php echo url(config('smartend.backend_path') . "/relatedLoad"); ?>/' + fid,
+                        url: '<?php echo url(config('spreinvents.backend_path') . "/relatedLoad"); ?>/' + fid,
                         data: {},
                         success: function (data) {
                             $('#r_topics').html(data)

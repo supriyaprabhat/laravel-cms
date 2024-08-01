@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     protected function credentials(Request $request)
     {
-        if (config('smartend.nocaptcha_status')) {
+        if (config('spreinvents.nocaptcha_status')) {
             $this->validate($request, [
                 'g-recaptcha-response' => 'required|captcha'
             ]);

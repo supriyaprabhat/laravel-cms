@@ -27,7 +27,7 @@
                     {!! Form::textarea('order_message','', array('placeholder' => __('frontend.notes'),'class' => 'form-control','id'=>'order_message','rows'=>'5')) !!}
                 </div>
 
-                @if(config('smartend.nocaptcha_status'))
+                @if(config('spreinvents.nocaptcha_status'))
                     <div class="form-group mb-3">
                         {!! NoCaptcha::renderJs(@Helper::currentLanguage()->code) !!}
                         {!! NoCaptcha::display() !!}

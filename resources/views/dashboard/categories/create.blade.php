@@ -1,6 +1,6 @@
 <?php
 $title_var = "title_" . @Helper::currentLanguage()->code;
-$title_var2 = "title_" . config('smartend.default_language');
+$title_var2 = "title_" . config('spreinvents.default_language');
 if ($WebmasterSection->$title_var != "") {
     $WebmasterSectionTitle = $WebmasterSection->$title_var;
 } else {
@@ -21,7 +21,7 @@ if ($WebmasterSection->$title_var != "") {
             <div class="box-header dker">
                 <?php
                 $title_var = "title_" . @Helper::currentLanguage()->code;
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 if ($WebmasterSection->$title_var != "") {
                     $WebmasterSectionTitle = $WebmasterSection->$title_var;
                 } else {
@@ -56,7 +56,7 @@ if ($WebmasterSection->$title_var != "") {
                                 <option value="0">- - {!!  __('backend.categoryNoFather') !!} - -</option>
                                 <?php
                                 $title_var = "title_" . @Helper::currentLanguage()->code;
-                                $title_var2 = "title_" . config('smartend.default_language');
+                                $title_var2 = "title_" . config('spreinvents.default_language');
                                 ?>
                                 @foreach ($fatherSections as $fatherSection)
                                     <?php

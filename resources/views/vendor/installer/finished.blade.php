@@ -23,7 +23,7 @@
 
         <br><br>
         <strong>
-            If you want to import the demo contents you can follow the instructions mentioned <a target="_blank" href="https://smartend.app/docs/#demo">On this Guide</a>
+            If you want to import the demo contents you can follow the instructions mentioned <a target="_blank" href="https://spreinvents.app/docs/#demo">On this Guide</a>
         </strong>
     </div>
     <style>

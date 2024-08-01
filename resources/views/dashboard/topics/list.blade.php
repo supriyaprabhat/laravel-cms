@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.master')
 <?php
 $title_var = "title_" . @Helper::currentLanguage()->code;
-$title_var2 = "title_" . config('smartend.default_language');
+$title_var2 = "title_" . config('spreinvents.default_language');
 if ($WebmasterSection->$title_var != "") {
     $WebmasterSectionTitle = $WebmasterSection->$title_var;
 } else {
@@ -18,10 +18,10 @@ if ($WebmasterSection->$title_var != "") {
             <div class="box-header dker">
                 <?php
                 $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-                $cf_title_var2 = "title_" . config('smartend.default_language');
+                $cf_title_var2 = "title_" . config('spreinvents.default_language');
 
                 $title_var = "title_" . @Helper::currentLanguage()->code;
-                $title_var2 = "title_" . config('smartend.default_language');
+                $title_var2 = "title_" . config('spreinvents.default_language');
                 if ($WebmasterSection->$title_var != "") {
                     $WebmasterSectionTitle = $WebmasterSection->$title_var;
                 } else {
@@ -177,7 +177,7 @@ if ($WebmasterSection->$title_var != "") {
                 <div class="box">
                     <?php
                     $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-                    $cf_details_var2 = "details_" . config('smartend.default_language');
+                    $cf_details_var2 = "details_" . config('spreinvents.default_language');
                     if ($customField->$cf_details_var != "") {
                         $cf_details = $customField->$cf_details_var;
                     } else {
@@ -241,7 +241,7 @@ if ($WebmasterSection->$title_var != "") {
             @if($customField->in_statics && ($customField->type==6 || $customField->type==7))
             <?php
             $cf_details_var = "details_" . @Helper::currentLanguage()->code;
-            $cf_details_var2 = "details_" . config('smartend.default_language');
+            $cf_details_var2 = "details_" . config('spreinvents.default_language');
             if ($customField->$cf_details_var != "") {
                 $cf_details = $customField->$cf_details_var;
             } else {
@@ -338,7 +338,7 @@ if ($WebmasterSection->$title_var != "") {
                 "processing": true,
                 "serverSide": true,
                 "searching": false,
-                "pageLength": {{ config('smartend.backend_pagination') }},
+                "pageLength": {{ config('spreinvents.backend_pagination') }},
                 "lengthMenu": [[10, 20, 30, 50, 75, 100, 200, -1], [10, 20, 30, 50, 75, 100, 200, "All"]],
                 "ajax": {
                     "url": "{{ route('topicsList') }}",

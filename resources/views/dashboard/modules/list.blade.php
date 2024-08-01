@@ -46,7 +46,7 @@
                             <th class="text-center">{{ __('backend.sectionType') }}</th>
                             <th class="text-center">{{ __('backend.hasCategories') }}</th>
                             <th class="text-center" style="width:50px;">{{ __('backend.status') }}</th>
-                            @if (config('smartend.rss_status'))
+                            @if (config('spreinvents.rss_status'))
                                 <th class="text-center" style="width:50px;">RSS</th>
                             @endif
                             <th class="text-center" style="width:200px;">{{ __('backend.options') }}</th>
@@ -55,7 +55,7 @@
                         <tbody>
                         <?php
                         $title_var = "title_" . @Helper::currentLanguage()->code;
-                        $title_var2 = "title_" . config('smartend.default_language');
+                        $title_var2 = "title_" . config('spreinvents.default_language');
                         ?>
                         @foreach($WebmasterSections as $WebSection)
                             <?php
@@ -95,7 +95,7 @@
                                 <td class="text-center">
                                     <i class="fa {{ ($WebSection->status==1) ? "fa-check text-success":"fa-times text-danger" }} inline"></i>
                                 </td>
-                                @if (config('smartend.rss_status'))
+                                @if (config('spreinvents.rss_status'))
                                     <td class="text-center">
                                         @if(in_array($WebSection->type,[0,5,8]))
                                             <a target="_blank" class="text-warning"

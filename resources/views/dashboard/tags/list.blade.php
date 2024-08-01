@@ -217,7 +217,7 @@
                 "serverSide": true,
                 "searching": false,
                 "responsive": true,
-                "pageLength": {{ config('smartend.backend_pagination') }},
+                "pageLength": {{ config('spreinvents.backend_pagination') }},
                 "lengthMenu": [[10, 20, 30, 50, 75, 100, 200, -1], [10, 20, 30, 50, 75, 100, 200, "All"]],
                 "ajax": {
                     "url": "{{ route('tagsList') }}",

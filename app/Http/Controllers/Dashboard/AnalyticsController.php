@@ -266,7 +266,7 @@ class AnalyticsController extends Controller
 
         //List of Analytics Visitors
         $AnalyticsVisitors = AnalyticsVisitor::orderby('date', 'desc')->orderby('time',
-            'desc')->paginate(config('smartend.backend_pagination'));
+            'desc')->paginate(config('spreinvents.backend_pagination'));
 
         return view("dashboard.analytics.visitors", compact("GeneralWebmasterSections", "AnalyticsVisitors"));
     }

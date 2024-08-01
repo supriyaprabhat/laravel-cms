@@ -7,7 +7,7 @@ return [
      * Shared translations.
      *
      */
-    'title' => 'تنصيب نظام Smartend CMS',
+    'title' => 'تنصيب نظام Spreinvents CMS',
     'next' => 'متابعة',
 
 
@@ -17,8 +17,8 @@ return [
      *
      */
     'welcome' => [
-        'title' => 'تنصيب نظام Smartend CMS',
-        'message' => 'أهلا بك في صفحة تنصيب Smartend CMS',
+        'title' => 'تنصيب نظام Spreinvents CMS',
+        'message' => 'أهلا بك في صفحة تنصيب Spreinvents CMS',
     ],
 
 

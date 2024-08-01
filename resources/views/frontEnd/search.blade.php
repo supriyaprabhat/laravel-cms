@@ -4,9 +4,9 @@
     <div>
         <?php
         $cf_title_var = "title_" . @Helper::currentLanguage()->code;
-        $cf_title_var2 = "title_" . config('smartend.default_language');
+        $cf_title_var2 = "title_" . config('spreinvents.default_language');
         $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . config('smartend.default_language');
+        $title_var2 = "title_" . config('spreinvents.default_language');
         $webmaster_section_title = "";
         $category_title = "";
         $page_title = "";

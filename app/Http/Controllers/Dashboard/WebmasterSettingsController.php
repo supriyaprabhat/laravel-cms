@@ -176,7 +176,7 @@ class WebmasterSettingsController extends Controller
             $WebmasterSetting->updated_by = Auth::user()->id;
             $WebmasterSetting->save();
 
-            $OLD_BACKEND_PATH = config('smartend.backend_path');
+            $OLD_BACKEND_PATH = config('spreinvents.backend_path');
             if ($request->backend_path == "") {
                 $request->backend_path = "admin";
             }
@@ -339,7 +339,7 @@ class WebmasterSettingsController extends Controller
         if (@Auth::user()->permissionsGroup->delete_status) {
             $Language = Language::find($request->id);
             if (!empty($Language)) {
-                if (config('smartend.default_language') == $Language->code && !$request->status) {
+                if (config('spreinvents.default_language') == $Language->code && !$request->status) {
                     return redirect()->action('Dashboard\WebmasterSettingsController@edit')
                         ->with('errorMessage', __('backend.defineAnotherDefaultLangFirst'))
                         ->with('active_tab', "languageSettingsTab");
@@ -383,7 +383,7 @@ class WebmasterSettingsController extends Controller
             $Languages_count = Language::count();
             if ($Languages_count > 1) {
                 if (!empty($Language)) {
-                    if (config('smartend.default_language') == $Language->code) {
+                    if (config('spreinvents.default_language') == $Language->code) {
                         return redirect()->action('Dashboard\WebmasterSettingsController@edit')
                             ->with('errorMessage', __('backend.defineAnotherDefaultLangFirst'))
                             ->with('active_tab', "languageSettingsTab");
@@ -457,11 +457,11 @@ class WebmasterSettingsController extends Controller
                     if ($entry[0] == $key) {
                         // If yes, overwrite it with the new one
                         $env[$env_key] = $key . "=" . $value;
-                        config(['smartend.' . strtolower($key) => $value]);
+                        config(['spreinvents.' . strtolower($key) => $value]);
                     } else {
                         // If not, keep the old one
                         $env[$env_key] = $env_value;
-                        config(['smartend.' . strtolower($env_key) => $env_value]);
+                        config(['spreinvents.' . strtolower($env_key) => $env_value]);
                     }
                 }
             }
@@ -855,7 +855,7 @@ class WebmasterSettingsController extends Controller
                     if ($WebmasterSection->{"seo_url_slug_" . $ActiveLanguage->code} == "") {
 
                         $title_var = "title_" . @$ActiveLanguage->code;
-                        $title_var2 = "title_" . config('smartend.default_language');
+                        $title_var2 = "title_" . config('spreinvents.default_language');
 
                         if ($WebmasterSection->$title_var != "") {
                             $title = $WebmasterSection->$title_var;
@@ -877,7 +877,7 @@ class WebmasterSettingsController extends Controller
                     if ($Section->{"seo_url_slug_" . $ActiveLanguage->code} == "") {
 
                         $title_var = "title_" . @$ActiveLanguage->code;
-                        $title_var2 = "title_" . config('smartend.default_language');
+                        $title_var2 = "title_" . config('spreinvents.default_language');
 
                         if ($Section->$title_var != "") {
                             $title = $Section->$title_var;
@@ -899,7 +899,7 @@ class WebmasterSettingsController extends Controller
                     if ($Topic->{"seo_url_slug_" . $ActiveLanguage->code} == "") {
 
                         $title_var = "title_" . @$ActiveLanguage->code;
-                        $title_var2 = "title_" . config('smartend.default_language');
+                        $title_var2 = "title_" . config('spreinvents.default_language');
 
                         if ($Topic->$title_var != "") {
                             $title = $Topic->$title_var;

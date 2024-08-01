@@ -14,9 +14,9 @@ $HomePartners = Helper::Topics(Helper::GeneralWebmasterSettings("home_content3_s
                     <?php
                     $ii = 0;
                     $title_var = "title_" . @Helper::currentLanguage()->code;
-                    $title_var2 = "title_" . config('smartend.default_language');
+                    $title_var2 = "title_" . config('spreinvents.default_language');
                     $details_var = "details_" . @Helper::currentLanguage()->code;
-                    $details_var2 = "details_" . config('smartend.default_language');
+                    $details_var2 = "details_" . config('spreinvents.default_language');
                     $section_url = "";
                     ?>
 

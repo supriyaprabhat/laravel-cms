@@ -19,7 +19,7 @@
             {{Form::open(['route'=>['webmailsStore'],'method'=>'POST', 'files' => true ])}}
             <?php
             $siteTitle_var = "site_title_" . @Helper::currentLanguage()->code;
-            $siteTitle_var2 = "site_title_" . config('smartend.default_language');
+            $siteTitle_var2 = "site_title_" . config('spreinvents.default_language');
             if ($SiteSetting->$siteTitle_var != "") {
                 $siteTitle = $SiteSetting->$siteTitle_var;
             } else {
@@ -45,7 +45,7 @@
             ?>
             {!! Form::hidden('contact_id','') !!}
             {!! Form::hidden('father_id','') !!}
-            {!! Form::hidden('from_email',config('smartend.mail_from_address')) !!}
+            {!! Form::hidden('from_email',config('spreinvents.mail_from_address')) !!}
             {!! Form::hidden('from_name',$siteTitle) !!}
             {!! Form::hidden('from_phone','') !!}
             {!! Form::hidden('to_name','') !!}

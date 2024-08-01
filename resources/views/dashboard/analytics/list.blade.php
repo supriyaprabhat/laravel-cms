@@ -243,7 +243,7 @@
                                 fromLabel: '{{ __('backend.applyFrom') }}',
                                 toLabel: '{{ __('backend.applyTo') }}',
                                 customRangeLabel: '{{ __('backend.customRange') }}',
-                                firstDay: {{ (config('smartend.first_day_of_week')+1) }}
+                                firstDay: {{ (config('spreinvents.first_day_of_week')+1) }}
                             }
                         },
                         function (start, end) {

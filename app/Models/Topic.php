@@ -33,7 +33,7 @@ class Topic extends Model implements Feedable
         $WebSection = WebmasterSection::find($section_id);
         if (!empty($WebSection)) {
             if ($WebSection->type == 0) {
-                return Topic::where([['webmaster_id', '=', $section_id], ['status', 1], ['expire_date', '>=', date("Y-m-d")], ['expire_date', '<>', null]])->orWhere([['webmaster_id', '=', $section_id], ['status', 1], ['expire_date', null]])->orderby('row_no', config('smartend.frontend_topics_order'))->get();
+                return Topic::where([['webmaster_id', '=', $section_id], ['status', 1], ['expire_date', '>=', date("Y-m-d")], ['expire_date', '<>', null]])->orWhere([['webmaster_id', '=', $section_id], ['status', 1], ['expire_date', null]])->orderby('row_no', config('spreinvents.frontend_topics_order'))->get();
             }
         }
         return Topic::where("id", 0)->get();

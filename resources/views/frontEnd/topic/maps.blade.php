@@ -1,4 +1,4 @@
-@if(config('smartend.google_maps_key') !="")
+@if(config('spreinvents.google_maps_key') !="")
     @if(count($Topic->maps) >0)
         <div class="row mb-4">
             <div class="col-lg-12">
@@ -17,7 +17,7 @@
         ?>
         @push('after-scripts')
             <script type="text/javascript"
-                    src="//maps.google.com/maps/api/js?key={{ config('smartend.google_maps_key') }}&language={{@Helper::currentLanguage()->code}}&callback=Function.prototype"></script>
+                    src="//maps.google.com/maps/api/js?key={{ config('spreinvents.google_maps_key') }}&language={{@Helper::currentLanguage()->code}}&callback=Function.prototype"></script>
 
             <script type="text/javascript">
                 // var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';

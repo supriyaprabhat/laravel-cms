@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
 <link rel="apple-touch-icon" href="{{ asset('public/assets/dashboard/images/logo.png') }}">
-<meta name="apple-mobile-web-app-title" content="Smartend">
+<meta name="apple-mobile-web-app-title" content="spreinvents">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <meta name="mobile-web-app-capable" content="yes">

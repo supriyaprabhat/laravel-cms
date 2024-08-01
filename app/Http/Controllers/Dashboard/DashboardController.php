@@ -257,7 +257,7 @@ class DashboardController extends Controller
                         $Topics = $Topics->where('created_by', '=', Auth::user()->id);
                     }
                     $Topics = $Topics->whereIn("id", $TopicIds);
-                    $Topics = $Topics->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                    $Topics = $Topics->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
                 }
             } else {
                 //find Contacts
@@ -274,7 +274,7 @@ class DashboardController extends Controller
                         ->orwhere('phone', '=', $search_word)
                         ->orwhere('email', '=', $search_word);
                 });
-                $Contacts = $Contacts->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                $Contacts = $Contacts->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
 
                 //find Webmails
                 $Webmails = Webmail::where("id", ">", 0);
@@ -289,7 +289,7 @@ class DashboardController extends Controller
                         ->orwhere('to_email', 'like', '%' . $search_word . '%')
                         ->orwhere('to_name', 'like', '%' . $search_word . '%');
                 });
-                $Webmails = $Webmails->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                $Webmails = $Webmails->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
 
 
                 //find Events
@@ -301,7 +301,7 @@ class DashboardController extends Controller
                     $query->where('title', 'like', '%' . $search_word . '%')
                         ->orwhere('details', 'like', '%' . $search_word . '%');
                 });
-                $Events = $Events->orderby('start_date', 'desc')->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                $Events = $Events->orderby('start_date', 'desc')->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
 
 
                 //find Topics
@@ -313,7 +313,7 @@ class DashboardController extends Controller
                     $query->where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
                         ->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%');
                 });
-                $Topics = $Topics->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                $Topics = $Topics->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
 
                 //find Sections
                 $Sections = Section::where("id", ">", 0);
@@ -324,7 +324,7 @@ class DashboardController extends Controller
                     $query->where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
                         ->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%');
                 });
-                $Sections = $Sections->orderby('id', 'desc')->paginate(config('smartend.backend_pagination'));
+                $Sections = $Sections->orderby('id', 'desc')->paginate(config('spreinvents.backend_pagination'));
             }
 
             if (count($Webmails) > 0) {
