@@ -37,7 +37,7 @@ $Staff = Helper::Topics(Helper::GeneralWebmasterSettings("home_content5_section_
                     }
                     ?>
                     <div class="col-lg-6 mb-4">
-                        <div class="member d-flex align-items-start">
+                        <div class="member d-flex align-items-start" data-aos="fade-up">
                             @if($Topic->photo_file !="")
                                 <a href="{{ $topic_link_url }}">
                                     <div class="pic">

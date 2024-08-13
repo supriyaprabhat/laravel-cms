@@ -33,7 +33,7 @@ $HomePhotos = Helper::Topics(Helper::GeneralWebmasterSettings("home_content2_sec
                     @foreach($HomePhoto->photos as $photo)
                         @if($ph_count<$HomePhotosLimit)
                             <div class="col-lg-3 col-md-4">
-                                <div class="gallery-item">
+                                <div class="gallery-item" data-aos="flip-left">
                                     <a href="{{ URL::to('public/uploads/topics/'.$photo->file) }}"
                                        class="galelry-lightbox" title="{{ $title }}">
                                         <img src="{{ URL::to('public/uploads/topics/'.$photo->file) }}" width="100%" height="210"  loading="lazy"

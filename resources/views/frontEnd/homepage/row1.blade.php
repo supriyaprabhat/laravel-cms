@@ -81,7 +81,7 @@ $TextBanners = Helper::BannersList(Helper::GeneralWebmasterSettings("home_text_b
                     }
                     ?>
                     <div class="col-lg-{{$col_width}} col-md-6 d-flex align-items-stretch mb-3">
-                        <div class="icon-box">
+                        <div class="icon-box" data-aos="zoom-out-down">
                             @if($TextBanner->code !="")
                                 {!! $TextBanner->code !!}
                             @else

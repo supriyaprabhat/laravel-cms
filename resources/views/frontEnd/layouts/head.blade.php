@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="{{ asset('public/assets/frontend/vendor/owl-carousel/assets/owl.carousel.min.css') }}?v={{ Helper::system_version() }}">
 <link rel="stylesheet" href="{{ asset('public/assets/frontend/vendor/owl-carousel/assets/owl.theme.default.min.css') }}?v={{ Helper::system_version() }}">
 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <link href="{{ asset('public/assets/frontend/css/style.css') }}?v={{ Helper::system_version() }}" rel="stylesheet"/>
 
 

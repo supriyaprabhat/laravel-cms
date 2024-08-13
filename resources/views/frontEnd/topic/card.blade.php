@@ -1,6 +1,6 @@
 @if(!empty($Topic))
     <article>
-        <div class="card post-card pa-0 mb-4">
+        <div class="card post-card pa-0 mb-4" data-aos="zoom-in-down">
             @if($Topic->webmasterSection->type==2 && $Topic->video_file!="")
                 {{--video--}}
                 <a href="{{ $topic_link_url }}">

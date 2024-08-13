@@ -6,14 +6,16 @@
 </script>
 <!-- Vendor JS Files -->
 <script src="{{ asset('public/assets/frontend/js/jquery.min.js') }}?v={{ Helper::system_version() }}"></script>
-<script
-    src="{{ asset('public/assets/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v={{ Helper::system_version() }}"></script>
-<script
-    src="{{ asset('public/assets/frontend/vendor/glightbox/js/glightbox.min.js') }}?v={{ Helper::system_version() }}"></script>
-<script
-    src="{{ asset('public/assets/frontend/vendor/swiper/swiper-bundle.min.js') }}?v={{ Helper::system_version() }}"></script>
-<script
-    src="{{ asset('public/assets/frontend/vendor/owl-carousel/owl.carousel.js') }}?v={{ Helper::system_version() }}"></script>
+<script src="{{ asset('public/assets/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v={{ Helper::system_version() }}"></script>
+<script src="{{ asset('public/assets/frontend/vendor/glightbox/js/glightbox.min.js') }}?v={{ Helper::system_version() }}"></script>
+<script src="{{ asset('public/assets/frontend/vendor/swiper/swiper-bundle.min.js') }}?v={{ Helper::system_version() }}"></script>
+<script src="{{ asset('public/assets/frontend/vendor/owl-carousel/owl.carousel.js') }}?v={{ Helper::system_version() }}"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 
 <!-- Template Main JS File -->
 <script src="{{ asset('public/assets/frontend/js/main.js') }}?v={{ Helper::system_version() }}"></script>
