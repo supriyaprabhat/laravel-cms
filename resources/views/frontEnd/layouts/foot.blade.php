@@ -19,6 +19,7 @@
 
 <!-- Template Main JS File -->
 <script src="{{ asset('public/assets/frontend/js/main.js') }}?v={{ Helper::system_version() }}"></script>
+<script src="{{ asset('public/assets/frontend/js/story.js') }}?v={{ Helper::system_version() }}"></script>
 
 {{--ajax subscribe to news letter--}}
 @if(Helper::GeneralSiteSettings("style_subscribe"))

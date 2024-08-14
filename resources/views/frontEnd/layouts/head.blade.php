@@ -20,6 +20,7 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <link href="{{ asset('public/assets/frontend/css/style.css') }}?v={{ Helper::system_version() }}" rel="stylesheet"/>
+<link href="{{ asset('public/assets/frontend/css/story.css') }}?v={{ Helper::system_version() }}" rel="stylesheet"/>
 
 
 @if( @Helper::currentLanguage()->direction=="rtl")
