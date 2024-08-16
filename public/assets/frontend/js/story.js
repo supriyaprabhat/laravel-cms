@@ -59,6 +59,7 @@ const rightArrow = document.querySelector(".story-full .right-arrow");
 let currentIndex = 0;
 let timer;
 
+
 allStories.forEach((s, i) => {
   const content = document.createElement("div");
   content.classList.add("content");

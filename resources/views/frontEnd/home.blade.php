@@ -10,7 +10,7 @@
         ?>
 
         @include('frontEnd.layouts.slider')
-        @include('frontEnd.homepage.news')
+        @include('frontEnd.homepage.story')
         @include('frontEnd.homepage.row1')
         @include('frontEnd.homepage.row2')
         @include('frontEnd.homepage.row3')

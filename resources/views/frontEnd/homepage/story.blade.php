@@ -1,8 +1,18 @@
+<?php
+$StoryLimit = 6; // 0 = all
+$Story = Helper::Topics(Helper::GeneralWebmasterSettings("home_content8_section_id"), 0, $StoryLimit, 1);
+?>
+@if(count($Story)>0)
+{
+    dd($Story);
+}
+@else
+@endif
 <section id="services" class="services">
     <div class="container">
         <div class="row">
             <div class="stories-container">
-                <!-- <div class="content">
+                {{-- <div class="content">
                     <img src="{{ asset('public/assets/frontend/images/news/1-thumb.png')}}" alt="" />
                 </div>
 
@@ -32,7 +42,7 @@
 
                 <div class="content">
                     <img src="{{ asset('public/assets/frontend/images/news/8-thumb.png')}}" alt="" />
-                </div> -->
+                </div> --}}
             </div>
 
             <div class="story-full">
