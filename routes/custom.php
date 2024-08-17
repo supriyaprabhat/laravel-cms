@@ -4,7 +4,7 @@ use App\Http\Controllers\Custom\CustomController;
 use Illuminate\Support\Facades\Route;
 
 // private route example ( require login ):
-///// Route::Group(['prefix' => config('smartend.backend_path'), 'middleware' => ['auth']], function () {
+///// Route::Group(['prefix' => config('spreinvents.backend_path'), 'middleware' => ['auth']], function () {
     ///// Route::get('/custom-page', [CustomController::class, 'custom_page']);
 ///// });
 

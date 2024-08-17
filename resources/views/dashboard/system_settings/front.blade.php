@@ -324,6 +324,27 @@
             </div>
 
             <div class="form-group">
+                <label>{{ __('backend.homeRow_8') }} : </label>
+                <select name="home_content8_section_id" id="home_content8_section_id"
+                        class="form-control c-select">
+                    <option value="0">- - {!!  __('backend.none') !!} - -</option>
+                    @foreach ($GeneralWebmasterSections as $Webmaster_Section)
+                        @if($Webmaster_Section->type !=4)
+                            <?php
+                            if ($Webmaster_Section->$title_var != "") {
+                                $WSectionTitle = $Webmaster_Section->$title_var;
+                            } else {
+                                $WSectionTitle = $Webmaster_Section->$title_var2;
+                            }
+                            ?>
+                            <option
+                                value="{{ $Webmaster_Section->id  }}" {{ ($Webmaster_Section->id == $WebmasterSetting->home_content8_section_id) ? "selected='selected'":""  }}>{!! $WSectionTitle !!}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label>{{ __('backend.contactPageId') }} : </label>
                 <select name="contact_page_id" id="contact_page_id" class="form-control c-select">
                     <option value="0">- - {!!  __('backend.none') !!} - -</option>

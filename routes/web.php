@@ -30,7 +30,7 @@ Route::get('/{lang?}/404', [HomeController::class, 'page_404'])->name('NotFound'
 
 
 // RSS Feed Routes
-if (config('smartend.rss_status')) {
+if (config('spreinvents.rss_status')) {
     Route::feeds();
 }
 
@@ -38,7 +38,7 @@ if (config('smartend.rss_status')) {
 Route::get('/oauth/{driver}', [SocialAuthController::class, 'redirectToProvider'])->name('social.oauth');
 Route::get('/oauth/{driver}/callback', [SocialAuthController::class, 'handleProviderCallback'])->name('social.callback');
 
-Route::Group(['prefix' => config('smartend.backend_path')], function () {
+Route::Group(['prefix' => config('spreinvents.backend_path')], function () {
     Auth::routes();
 });
 

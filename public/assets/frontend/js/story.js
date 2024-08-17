@@ -1,52 +1,52 @@
-const allStories = [
-  {
-    thumbUrl: "public/assets/frontend/images/news/1-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/1.png",
-    title: "Title No. 1",
-  },
+// const allStories = [
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/1-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/1.png",
+//     title: "Title No. 1",
+//   },
 
-  {
-    thumbUrl: "public/assets/frontend/images/news/2-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/2.png",
-    title: "Title No. 2",
-  },
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/2-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/2.png",
+//     title: "Title No. 2",
+//   },
 
-  {
-    thumbUrl: "public/assets/frontend/images/news/3-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/3.png",
-    title: "Title No. 3",
-  },
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/3-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/3.png",
+//     title: "Title No. 3",
+//   },
 
-  {
-    thumbUrl: "public/assets/frontend/images/news/4-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/4.png",
-    title: "Title No. 4",
-  },
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/4-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/4.png",
+//     title: "Title No. 4",
+//   },
 
-  {
-    thumbUrl: "public/assets/frontend/images/news/5-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/5.png",
-    title: "Title No. 5",
-  },
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/5-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/5.png",
+//     title: "Title No. 5",
+//   },
 
-  {
-    thumbUrl: "public/assets/frontend/images/news/6-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/6.png",
-    title: "Title No. 6",
-  },
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/6-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/6.png",
+//     title: "Title No. 6",
+//   },
 
-  {
-    thumbUrl: "public/assets/frontend/images/news/7-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/7.png",
-    title: "Title No. 7",
-  },
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/7-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/7.png",
+//     title: "Title No. 7",
+//   },
 
-  {
-    thumbUrl: "public/assets/frontend/images/news/8-thumb.png",
-    imageUrl: "public/assets/frontend/images/news/8.png",
-    title: "Title No. 8",
-  },
-];
+//   {
+//     thumbUrl: "public/assets/frontend/images/news/8-thumb.png",
+//     imageUrl: "public/assets/frontend/images/news/8.png",
+//     title: "Title No. 8",
+//   },
+// ];
 
 const storiesContainer = document.querySelector(".stories-container");
 const storyFull = document.querySelector(".story-full");
@@ -86,6 +86,13 @@ allStories.forEach((s, i) => {
     timer = setInterval(nextStory, 5000);
   });
 });
+// const contentId = document.getElementById('content');
+// contentId.addEventListener("click", () =>{
+//     storyFull.classList.add("active");
+
+//     clearInterval(timer);
+//     timer = setInterval(nextStory, 5000);
+// });
 
 closeBtn.addEventListener("click", () => {
   storyFull.classList.remove("active");

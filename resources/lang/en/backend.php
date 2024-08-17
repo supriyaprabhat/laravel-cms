@@ -97,6 +97,7 @@ return array(
     'newsletterGroup' => 'Newsletter Emails Group (within contacts)',
     'homeRow1' => 'Home Page Contents ROW 1',
     'homeRow2' => 'Home Page Contents ROW 2',
+    'homeRow_8' => 'Home Page Contents ROW 8',
     'homeRow3' => 'Latest Topic (within footer)',
     'contactPageId' => 'Contact Us Page (Details & Maps)',
     'activeLanguages' => 'Active Languages',

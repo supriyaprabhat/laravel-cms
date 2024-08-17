@@ -56,6 +56,7 @@ return [
     'homeContents1desc' => 'The latest articles from our blog, you can browse more',
     'homeContents2Title' => 'Recent Works',
     'homeContents2desc' => 'Some of our latest works, you can browse more',
+    'homeContents8Title' => 'Latest Stories',
     'search' => 'Search for...',
     'visits' => 'Visits',
     'orderForm' => 'Order form',
